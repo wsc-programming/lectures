@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	  <title>reveal.js</title>
+
+	  <link rel="stylesheet" href="css/reveal.css">
+	  <link rel="stylesheet" href="css/theme/black.css">
+
+	  <!-- Theme used for syntax highlighting of code -->
+	  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+	  <!-- Printing and PDF exports -->
+	  <script>
+	    var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+	</head>
+	<body>
+	  <div class="reveal">
+	    <div class="slides">
+        <section>
+          <h2>WSC Lecture 20171129</h2>
+          <h3>by $TeraCode</h3>
+        </section>
+        <section>
+          <h2>Schedule</h2>
+          <ul>
+            <li>13:00 - 13:50 Lecture 1</li>
+            <li>14:00 - 15:00 Free</li>
+            <li>15:00 - 15:50 Lecture 2</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Contents</h2>
+          <ul>
+            <li>自己紹介</li>
+            <li>僕たちが提供できること</li>
+            <li>今日は何を？</li>
+          </ul>
+        </section>
+        <section>
+          <h2>自己紹介</h2>
+          <ul>
+            <li>杉山一希</li>
+            <li>植木駿</li>
+            <li>近友太平</li>
+          </ul>
+        </section>
+        <section>
+          <h2>僕たちが提供できること</h2>
+          <ul>
+            <li>プログラミングの学び方[*]</li>
+            <li>エンジニアの仕事の仕組みと人生設計[*]</li>
+            <li>Webの仕組み/Web技術全般[*]</li>
+            <li>インフラ構築</li>
+            <li>アプリケーション開発</li>
+            <li>テスト駆動開発</li>
+            <li>コーディング規約/リーダブルコート[new]</li>
+            <li>英語/Googlability[*]</li>
+            <li>数学/アルゴリズム[*]</li>
+          </ul>
+        </section>
+        <section>
+          <h2>今日は何を？</h2>
+          <ul>
+            <li>Lecture 1: リーダブルコード第1回</li>
+            <li>Lecture 2: アルゴリズム入門</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Lecture 1</h1>
+        </section>
+        <section>
+          <h2>リーダブルコード</h2>
+        </section>
+        <section>
+          <h1>Lecture 2</h1>
+        </section>
+        <section>
+          <h2>アルゴリズムの基本</h2>
+        </section>
+        <section>
+          <h2>データ構造</h2>
+          <ul>
+            <li>変数</li>
+            <li>配列</li>
+            <li>リスト</li>
+            <li>...</li>
+          </ul>
+        </section>
+        <section>
+          <h2>データ構造</h2>
+          <ul>
+            <li>キュー（FirstInFirstOut）</li>
+            <li>スタック（LastInFirstOut）</li>
+            <li>ツリー</li>
+            <li>...</li>
+          </ul>
+        </section>
+        <section>
+          <h2>フローチャート</h2>
+        </section>
+        <section data-background-image="https://www.edrawsoft.com/jp/flowchart/images/basicflow-shapes.png" data-background-size="1900px">
+        </section>
+        <section data-background-image="http://sevendays-study.com/algorithm/img/figpr2-3.png" data-background-size="900px">
+        </section>
+        <section data-background-image="http://www.cc.kyoto-su.ac.jp/~yamada/programming/ifif.png" data-background-size="1000px">
+        </section>
+        <section data-background-image="http://image.itmedia.co.jp/ait/articles/0808/01/r20algorithm0105.jpg" data-background-size="900px">
+        </section>
+        <section>
+          <h2>基本のアルゴリズム</h2>
+        </section>
+        <section>
+          <p>変数に10を代入して、<br>画面に表示する</p>
+        </section>
+        <section>
+          <p>配列内の数値の合計を計算して、<br>画面に表示する</p>
+        </section>
+        <section>
+          <p>配列内の数値の平均を計算して、<br>画面に表示する</p>
+        </section>
+        <section>
+          <p>配列内の数値の最大値・最小値を計算して、<br>画面に表示する</p>
+        </section>
+        <section>
+          <h2>サーチアルゴリズム</h2>
+        </section>
+        <section>
+          <h2>リニアサーチ</h2>
+        </section>
+        <section>
+          <h2>バイナリサーチ</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+      });
+    </script>
+
+  </body>
+</html>
