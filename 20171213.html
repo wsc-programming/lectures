@@ -147,7 +147,7 @@
           <ul>
             <li>サーチアルゴリズム：目的のデータを見つける</li>
             <li>ソートアルゴリズム：データを順番に並べる</li>
-            <li>他にも、経路探索アルゴリズム、暗号化アルゴリズム、データ圧縮アルゴリズム、レイトレーシングアルゴリズムなどなど。</li>            
+            <li>他にも、経路探索アルゴリズム、暗号化アルゴリズム、データ圧縮アルゴリズム、レイトレーシングアルゴリズムなどなど。</li>
           </ul>
         </section>
         <section>
@@ -261,34 +261,34 @@
           <img src="./img/2-2.binary_search.jpg" style="height: 600px">
         </section>
         <section>
-          <p>配列データ：　[1, 2, 4, 5, 10]</p>
+          <p>配列データ：　[ 1 , 2 , 4 , 5 , 6 , 8 , 9 ]</p>
           <p>探索する値：　4</p>
         </section>
         <section data-markdown>
           <code data-trim data-noescape>
             var array = [1, 2, 4, 5, 10]; // 探索するソート済み配列データ
             var searchValue = 4; // 探索する値
-            var findID = -1; // 見つかった番号。初期値はエラー値(-1)
+            var index = -1; // 見つかった番号。初期値はエラー値(-1)
             var left = 0; // 調べる左端の番号
             var right = array.length - 1; // 調べる右端の番号
 
             // 調べる左端と右端の間にデータがある場合繰り返す。
             while (left <= right) {
-            
+
               // 左右の真ん中の番号を調べる位置にする
               middle = Math.floor((left + right) / 2);
-            
+
               // 調べる位置の値と探す値を比較して
               if (array[middle] == searchValue) {
-                
+
                 index = middle; // 同じならその番号を保存
                 break; // 繰り返しを終了
-                
+
               // 探す値より小さければ
               } else if (array[middle] < searchValue) {
 
                 left = middle + 1; // 左端を移動
-                
+
                 // 探す値より大きければ
               } else {
 
@@ -296,63 +296,52 @@
               }
             }
 
-            console.log(findID); // 番号を表示
+            console.log(index); // 番号を表示
           </code>
         </section>
         <section>
-          <h2>ソートアルゴリズム</h2>
-        </section>        
-        <section>
-          <h2>バブルソート</h2>
-          <p>説明</p>
+          <h2>バブルソート（単純交換法）</h2>
+          <p>全ての隣り合う要素の値を比べていて、小さい方を前に移動させる</p>
         </section>
         <section>
           <ul>
-            <li>目的：</li>
-            <li>現状：</li>
-            <li>結果：</li>
-            <li>メリット：</li>
-            <li>デメリット：</li>
+            <li>目的：データを昇降順に並べ替える</li>
+            <li>現状：データの「個数」、「それぞれの値」</li>
+            <li>結果：昇降順に並んだ配列</li>
+            <li>メリット：プログラムが単純で実装しやすい</li>
+            <li>デメリット：処理速度が遅い</li>
           </ul>
         </section>
-        <section>
-          <img src="./img/2-3-1.bubble_sort.jpg" style="height: 600px">
+				<section data-background-image="https://www.opentechguides.com/images/howto/howto_5101.png" data-background-size="900px">
         </section>
-        <section>
-          <img src="./img/2-3-2.bubble_sort.jpg" style="height: 600px">
+				<section>
+          <p>配列データ： [5 , 3 , 8 , 4 , 9]</p>
+					<p>バブルソートで昇降順に</p>
         </section>
-        <section>
-          <p>問題</p>
+				<section data-background-image="https://photos-3.dropbox.com/t/2/AADnntbQAzsVBm-3amLmNYmhLdRtIBt7Y6DV3EaHQ72PlA/12/298317399/jpeg/32x32/1/_/1/2/Photo%20Dec%2013%2C%2012%2041%2057.jpg/EP2bzKICGLsBIAIoAg/otNPc6-kKgE9OhOpvyGi7Ld87MG8tOq48QxPemhufEI?size=1600x1200&size_mode=3" data-background-size="900px">
         </section>
-        <section data-markdown>
-          <code data-trim data-noescape>
-            コード
-          </code>
-        </section>
-        <section>
-          <h2>題名</h2>
-          <p>説明</p>
-        </section>
-        <section>
-          <ul>
-            <li>目的：</li>
-            <li>現状：</li>
-            <li>結果：</li>
-            <li>メリット：</li>
-            <li>デメリット：</li>
-          </ul>
-        </section>
-        <section>
-          <img src="./img/" style="height: 600px">
-        </section>
-        <section>
-          <p>問題</p>
-        </section>
-        <section data-markdown>
-          <code data-trim data-noescape>
-            コード
-          </code>
-        </section>
+
+				<section data-markdown>
+					<code data-trim data-noescape>
+						//ソート前の配列データ
+						var a = [5, 3, 8, 4, 9];
+
+						//調べる範囲の開始位置を１つずつ後ろへ移動するfor文
+						for(var i = 0； i < a.length; i++){
+							//後ろから前に向かって小さい値を浮かび上がらせるfor文
+							for(var j = a.length - 1； j > i； j-- ){
+								//隣りあう２つの値を比べて、後ろが小さければ交換する
+								if(a[j] < a[j - 1]){
+									var tmp = a[j];
+									a[j] = a[j - 1];
+									a[j - 1] = tmp;
+								}
+							}
+						}
+						//ソート後の配列の表示
+						console.log(a);
+					</code>
+				</section>
       </div>
     </div>
 
