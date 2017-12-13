@@ -305,7 +305,7 @@
         </section>
         <section>
           <ul>
-            <li>目的：データを昇降順に並べ替える</li>
+            <li>目的：データを昇順に並べ替える</li>
             <li>現状：データの「個数」、「それぞれの値」</li>
             <li>結果：昇降順に並んだ配列</li>
             <li>メリット：プログラムが単純で実装しやすい</li>
@@ -316,7 +316,7 @@
         </section>
 				<section>
           <p>配列データ： [5 , 3 , 8 , 4 , 9]</p>
-					<p>バブルソートで昇降順に</p>
+					<p>バブルソートで昇順に</p>
         </section>
 				<section data-background-image="https://photos-3.dropbox.com/t/2/AADnntbQAzsVBm-3amLmNYmhLdRtIBt7Y6DV3EaHQ72PlA/12/298317399/jpeg/32x32/1/_/1/2/Photo%20Dec%2013%2C%2012%2041%2057.jpg/EP2bzKICGLsBIAIoAg/otNPc6-kKgE9OhOpvyGi7Ld87MG8tOq48QxPemhufEI?size=1600x1200&size_mode=3" data-background-size="900px">
         </section>
@@ -340,6 +340,60 @@
 						}
 						//ソート後の配列の表示
 						console.log(a);
+					</code>
+				</section>
+				<section>
+					<h2>選択ソート(単純選択法)</h2>
+					<p>最小値を探して、先頭から順番に並べていく</p>
+				</section>
+				<section>
+					<ul>
+						<li>目的：データを昇順に並べ替える</li>
+						<li>現状：データの「個数」、「それぞれの値」</li>
+						<li>結果：昇順に並んだ配列</li>
+						<li>メリット：プログラムが単純で実装しやすい</li>
+						<li>デメリット：処理速度が遅い(バブルソートよりやや速い)</li>
+					</ul>
+				</section>
+				<section data-background-image="https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png" data-background-size="900px">
+				</section>
+				<section>
+					<p>配列データ： [7 , 5 , 4 , 2]</p>
+					<p>選択ソートで昇降順に</p>
+				</section>
+				<section data-background-image="https://photos-2.dropbox.com/t/2/AADJiPtQf9bAYhDwZw64ZhZ1byk1IALY8oXevaVM4-N5Rw/12/298317399/jpeg/32x32/1/_/1/2/Photo%20Dec%2013%2C%2012%2043%2048.jpg/EP2bzKICGLsBIAIoAg/h3hFi5cQXFzSt6FhkM2AiBmMygtV2iBHDCu3Xfqy6Rg?size=1600x1200&size_mode=3" data-background-size="900px">
+				</section>
+
+				<section data-markdown>
+					<code data-trim data-noescape>
+						//ソート前の配列データ
+						var a = [7, 5, 4, 2];
+
+						//「最小値を入れる位置」を先頭から順番に選択していくfor文
+						for(var i = 0；i < a.length-1；i++){
+							//最小値を探すアルゴリズム
+							//先頭の値を暫定の最小値として初期設定する
+							var min = a[i];
+							//先頭の位置を保存する
+							var k = i;
+
+							//隣の位置から最後まで、最小値との比較を繰り返す
+							for(var j = i + 1； j < a.length； j++){
+								//比較して最小値を更新するif文
+								if(min > a[j]){
+									min = a[j];
+									k = j;
+								}
+							}
+							//交換するアルゴリズム
+							//「先頭の値」と「最小値の値」を交換する
+							var tmp = a[i];
+							a[i] = a[k];
+							a[k] = tmp;
+
+							//ソートの値を表示
+							console.log(a);
+						}
 					</code>
 				</section>
       </div>
