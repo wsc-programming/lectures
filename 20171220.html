@@ -248,30 +248,33 @@
 
 						//「最小値を入れる位置」を先頭から順番に選択していくfor文
 						for(var i = 0；i < a.length-1；i++){
-	           //最小値を探すアルゴリズム
-	           //先頭の値を暫定の最小値として初期設定する
-	           var min = a[i];
-	           //先頭の位置を保存する
-	           var k = i;
 
-	           //隣の位置から最後まで、最小値との比較を繰り返す
-	           for(var j = i + 1； j < a.length； j++){
-	                                   //比較して最小値を更新するif文
-	                                   if(min > a[j]){
-	           min = a[j];
-	           k = j;
-	           }
-	           }
-	           //交換するアルゴリズム
-	           //「先頭の値」と「最小値の値」を交換する
-	           var tmp = a[i];
-	           a[i] = a[k];
-	           a[k] = tmp;
+	           　//最小値を探すアルゴリズム
+	           　//先頭の値を暫定の最小値として初期設定する
+	           　var min = a[i];
 
-	           //ソートの値を表示
-	           console.log(a);
-	           }
-         </code>
+	           　//先頭の位置を保存する
+		          var k = i;
+
+		          //隣の位置から最後まで、最小値との比較を繰り返す
+  	         	for(var j = i + 1； j < a.length； j++){
+	  	        //比較して最小値を更新するif文
+      		      if(min > a[j]){
+	  	      		  min = a[j];
+	    	     			k = j;
+			          }
+        	   	}
+
+	         	  //交換するアルゴリズム
+	         	  //「先頭の値」と「最小値の値」を交換する
+	          	 var tmp = a[i];
+	          	 a[i] = a[k];
+	          	 a[k] = tmp;
+
+		           //ソートの値を表示
+		           console.log(a);
+	          }
+      	  </code>
 				</section>
         <section>
           <h2>挿入ソート（単純挿入法）</h2>
@@ -307,21 +310,22 @@
               // 後ろから前に向かって順番に見ていく
               for (var j = i-1; j >= 0; j--) {
 
-	              // 
+	              // 「挿入する値」が小さければ
   	            if (array[j] > tmp) {
 
-	  	            array[j + 1] = array[j];
+	  	            array[j + 1] = array[j]; // 調べた値を1つ後ろへずらす
 
+  	            // 「挿入する値」が小さくなければ
       	        } else {
 
-  	    	        break;
+  	    	        break; // ずらす処理終了
           	    }
             	}
 
-	            array[j + 1] = tmp;
+	            array[j + 1] = tmp;　// ずらす処理が終わった位置に「挿入する値」を入れる
   	        }
 
-    	      console.log("結果:" + array);
+    	      console.log("結果:" + array); // ソート後の配列を表示する
       	  </code>
      	  </section>
         <section>
@@ -343,34 +347,32 @@
         </section>
         <section>
           <h3>問題</h3>
-          <p>配列[10, 3, 1, 4, 2]を挿入ソートで昇順に並び替えなさい。</p>
+          <p>配列[10, 3, 1, 9, 7, 6, 8, 2, 4, 5]をシェルソートで昇順に並び替えなさい。</p>
         </section>
         <section data-markdown>
           <code data-trim data-noescape>
-            var array = [10, 3, 1, 4, 2];
+            var array = [10, 3, 1, 9, 7, 6, 8, 2, 4, 5];
 
-            // 「整列していない部分」から、順番に１ずつ取り出していく
-            for (var i = 1; i < array.length; i++) {
+            for (var step = parseInt(array.length/2); step > ; step = parseInt(step/2)) {
 
-              var tmp = array[i]; // 挿入する値を変数に代入
+            	for (var i = step; i < array.length; i++) {
 
-              // 「整列済みの部分」のどこに挿入すればいいかを
-              // 後ろから前に向かって順番に見ていく
-              for (var j = i-1; j >= 0; j--) {
+            		var tmp = array[i];
 
-	              // 
-  	            if (array[j] > tmp) {
+            		for (var j = i; j >= step; j -= step) {
 
-	  	            array[j + 1] = array[j];
+            			if (array[j - step] > tmp) {
 
-      	        } else {
+            				array[j] = array[j - step];
+	            		} else {
 
-  	    	        break;
-          	    }
-            	}
+	            			break;
+		            	}
+	            	}
 
-	            array[j + 1] = tmp;
-  	        }
+	            	array[j] = tmp;
+	            }
+	          }
 
     	      console.log("結果:" + array);
       	  </code>
