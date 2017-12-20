@@ -1,29 +1,29 @@
 <!doctype html>
 <html>
-	<head>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	  <title>reveal.js</title>
+    <title>reveal.js</title>
 
-	  <link rel="stylesheet" href="css/reveal.css">
-	  <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-	  <!-- Theme used for syntax highlighting of code -->
-	  <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-	  <!-- Printing and PDF exports -->
-	  <script>
-	    var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
-	</head>
-	<body>
-	  <div class="reveal">
-	    <div class="slides">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
         <section>
           <h2>WSC Lecture 20171220</h2>
           <h3>by $TeraCode</h3>
@@ -170,8 +170,8 @@
         <section data-background-image="http://image.itmedia.co.jp/ait/articles/0808/01/r20algorithm0105.jpg" data-background-size="1000px">
         </section>
         <section>
-			    <h2>サーチアルゴリズム</h2>
-		    </section>
+          <h2>サーチアルゴリズム</h2>
+        </section>
         <section>
           <h2>バブルソート（単純交換法）</h2>
           <p>全ての隣り合う要素の値を比べていて、小さい方を前に移動させる</p>
@@ -185,95 +185,99 @@
             <li>デメリット：処理速度が遅い</li>
           </ul>
         </section>
-				<section data-background-image="https://www.opentechguides.com/images/howto/howto_5101.png" data-background-size="900px">
+        <section data-background-image="https://www.opentechguides.com/images/howto/howto_5101.png" data-background-size="900px">
         </section>
         <section data-background-image="./img/2-3-1.bubble_sort.jpg" data-background-size="700px">
         </section>
         <section data-background-image="./img/2-3-2.bubble_sort.jpg" data-background-size="700px">
         </section>
-				<section>
+        <section>
           <p>配列データ： [5 , 3 , 8 , 4 , 9]</p>
-					<p>バブルソートで昇順に</p>
+          <p>バブルソートで昇順に</p>
         </section>
-				<section data-markdown>
-					<code data-trim data-noescape>
-						//ソート前の配列データ
-						var a = [5, 3, 8, 4, 9];
+        <section>
+          <pre>
+            <code class="javascript" data-trim data-noescape>
+//ソート前の配列データ
+var a = [5, 3, 8, 4, 9];
 
-						//調べる範囲の開始位置を１つずつ後ろへ移動するfor文
-						for(var i = 0； i < a.length; i++){
+//調べる範囲の開始位置を１つずつ後ろへ移動するfor文
+for (var i = 0; i < a.length; i++) {
 
-							//後ろから前に向かって小さい値を浮かび上がらせるfor文
-							for(var j = a.length - 1; j > i； j-- ){
+  //後ろから前に向かって小さい値を浮かび上がらせるfor文
+  for (var j = a.length - 1; j > i; j-- ) {
 
-								//隣りあう２つの値を比べて、後ろが小さければ交換する
-								if(a[j] < a[j - 1]){
-									var tmp = a[j];
-									a[j] = a[j - 1];
-									a[j - 1] = tmp;
-								}
-							}
-						}
+    //隣りあう２つの値を比べて、後ろが小さければ交換する
+    if (a[j] < a[j - 1]) {
+      var tmp = a[j];
+      a[j] = a[j - 1];
+      a[j - 1] = tmp;
+    }
+  }
+}
 
-						console.log(a); // ソート後の配列の表示
-					</code>
-				</section>
-				<section>
-					<h2>選択ソート(単純選択法)</h2>
-					<p>最小値を探して、先頭から順番に並べていく</p>
-				</section>
-				<section>
-					<ul>
-						<li>目的：データを昇順に並べ替える</li>
-						<li>現状：データの「個数」、「それぞれの値」</li>
-						<li>結果：昇順に並んだ配列</li>
-						<li>メリット：プログラムが単純で実装しやすい</li>
-						<li>デメリット：処理速度が遅い(バブルソートよりやや速い)</li>
-					</ul>
-				</section>
-				<section data-background-image="https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png" data-background-size="900px">
-				</section>
+console.log(a); // ソート後の配列の表示
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h2>選択ソート(単純選択法)</h2>
+          <p>最小値を探して、先頭から順番に並べていく</p>
+        </section>
+        <section>
+          <ul>
+            <li>目的：データを昇順に並べ替える</li>
+            <li>現状：データの「個数」、「それぞれの値」</li>
+            <li>結果：昇順に並んだ配列</li>
+            <li>メリット：プログラムが単純で実装しやすい</li>
+            <li>デメリット：処理速度が遅い(バブルソートよりやや速い)</li>
+          </ul>
+        </section>
+        <section data-background-image="https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png" data-background-size="900px">
+        </section>
         <section data-background-image="./img/2-4-1.selection_sort.jpg" data-background-size="700px">
         </section>
         <section data-background-image="./img/2-4-2.selection_sort.jpg" data-background-size="700px">
         </section>
-				<section>
-					<p>配列データ： [7 , 5 , 4 , 2]</p>
-					<p>選択ソートで昇降順に</p>
-				</section>
-				<section data-markdown>
-					<code data-trim data-noescape>
-						//ソート前の配列データ
-						var a = [7, 5, 4, 2];
+        <section>
+          <p>配列データ： [7 , 5 , 4 , 2]</p>
+          <p>選択ソートで昇降順に</p>
+        </section>
+        <section>
+          <pre>
+            <code class="javascript" data-trim data-noescape>
+//ソート前の配列データ
+var a = [7, 5, 4, 2];
 
-						//「最小値を入れる位置」を先頭から順番に選択していくfor文
-						for(var i = 0; i < a.length-1; i++){
+//「最小値を入れる位置」を先頭から順番に選択していくfor文
+for (var i = 0; i < a.length-1; i++) {
 
-							//最小値を探すアルゴリズム
-							//先頭の値を暫定の最小値として初期設定する
-							var min = a[i];
-							//先頭の位置を保存する
-							var k = i;
+  //最小値を探すアルゴリズム
+  //先頭の値を暫定の最小値として初期設定する
+  var min = a[i];
+  //先頭の位置を保存する
+  var k = i;
 
-							//隣の位置から最後まで、最小値との比較を繰り返す
-							for(var j = i + 1； j < a.length； j++){
-								//比較して最小値を更新するif文
-								if(min > a[j]){
-									min = a[j];
-									k = j;
-								}
-							}
-							//交換するアルゴリズム
-							//「先頭の値」と「最小値の値」を交換する
-							var tmp = a[i];
-							a[i] = a[k];
-							a[k] = tmp;
+  //隣の位置から最後まで、最小値との比較を繰り返す
+  for (var j = i + 1; j < a.length; j++) {
+    //比較して最小値を更新するif文
+    if (min > a[j]) {
+      min = a[j];
+      k = j;
+    }
+  }
+  //交換するアルゴリズム
+  //「先頭の値」と「最小値の値」を交換する
+  var tmp = a[i];
+  a[i] = a[k];
+  a[k] = tmp;
 
-							//ソートの値を表示
-							console.log(a);
-						}
-					</code>
-				</section>
+  //ソートの値を表示
+  console.log(a);
+}
+            </code>
+          </pre>
+        </section>
         <section>
           <h2>挿入ソート（単純挿入法）</h2>
           <p>データを抜き出して正しい位置に挿入していく方法</p>
@@ -287,8 +291,8 @@
           <br></br>
           <p>プログラムは単純。基本的には処理速度が遅いが、すでに整列されている部分が多いほど高速に処理できる</p>
         </section>
-				<section data-background-image="https://www.codereading.com/algo_and_ds/algo/images/insertion-sort.png" data-background-size="500px">
-				</section>
+        <section data-background-image="https://www.codereading.com/algo_and_ds/algo/images/insertion-sort.png" data-background-size="500px">
+        </section>
         <section data-background-image="./img/insertion_sort_1.jpg" data-background-size="700px">
         </section>
         <section data-background-image="./img/insertion_sort_2.jpg" data-background-size="700px">
@@ -297,36 +301,38 @@
           <h3>問題</h3>
           <p>配列[10, 3, 1, 4, 2]を挿入ソートで昇順に並び替えなさい。</p>
         </section>
-        <section data-markdown>
-          <code data-trim data-noescape>
-            var array = [10, 3, 1, 4, 2];
+        <section>
+          <pre>
+            <code class="javascript" data-trim data-noescape>
+var array = [10, 3, 1, 4, 2];
 
-            // 「整列していない部分」から、順番に１つずつ取り出していく
-            for (var i = 1; i < array.length; i++) {
+// 「整列していない部分」から、順番に１つずつ取り出していく
+for (var i = 1; i < array.length; i++) {
 
-              var tmp = array[i];
+  var tmp = array[i];
 
-              // 「整列済みの部分」のどこに挿入すればいいかを
-              // 後ろから前に向かって順番に見ていく
-              for (var j = i-1; j >= 0; j--) {
+  // 「整列済みの部分」のどこに挿入すればいいかを
+  // 後ろから前に向かって順番に見ていく
+  for (var j = i-1; j >= 0; j--) {
 
-                // 「挿入する値」が小さければ
-                if (array[j] > tmp) {
+    // 「挿入する値」が小さければ
+    if (array[j] > tmp) {
 
-                  array[j + 1] = array[j]; //調べた値を１つずつ後ろへずらす
+      array[j + 1] = array[j]; //調べた値を１つずつ後ろへずらす
 
-                // 「挿入する値」が小さくなければ
-                } else {
+    // 「挿入する値」が小さくなければ
+    } else {
 
-                  break; //ずらす処理終了
-                }
-              }
+      break; //ずらす処理終了
+    }
+  }
 
-              array[j + 1] = tmp; // ずらす処理が終わった位置に「挿入する値」を入れる
-            }
+  array[j + 1] = tmp; // ずらす処理が終わった位置に「挿入する値」を入れる
+}
 
-            console.log("結果：" + array);
-          </code>
+console.log("結果：" + array);
+            </code>
+          </pre>
         </section>
         <section>
           <h2>シェルソート</h2>
@@ -341,8 +347,8 @@
           <br></br>
           <p>単純挿入法より処理速度は速いが、アルゴリズムが難しい</p>
         </section>
-				<section data-background-image="https://www.codereading.com/algo_and_ds/algo/images/shell-sort.png" data-background-size="700px">
-				</section>
+        <section data-background-image="https://www.codereading.com/algo_and_ds/algo/images/shell-sort.png" data-background-size="700px">
+        </section>
         <section data-background-image="./img/shell_sort_1.jpg" data-background-size="700px">
         </section>
         <section data-background-image="./img/shell_sort_2.jpg" data-background-size="700px">
@@ -351,40 +357,42 @@
           <h3>問題</h3>
           <p>配列[10, 3, 1, 9, 7, 6, 8, 2, 4, 5]をシェルソートで昇順に並び替えなさい。</p>
         </section>
-        <section data-markdown>
-          <code data-trim data-noescape>
-            var array = [10, 3, 1, 9, 7, 6, 8, 2, 4, 5];
+        <section>
+          <pre>
+            <code class="javascript" data-trim data-noescape>
+var array = [10, 3, 1, 9, 7, 6, 8, 2, 4, 5];
 
-            // 「グループ分けの間隔」を半分にしていく繰り返し
-            for (var step = parseInt(array.length/2); step > ; step = parseInt(step/2)) {
+// 「グループ分けの間隔」を半分にしていく繰り返し
+for (var step = parseInt(array.length/2); step > ; step = parseInt(step/2)) {
 
-              // 「挿入する値」を順番に１つずつ取り出す繰り返し
-            	for (var i = step; i < array.length; i++) {
+  // 「挿入する値」を順番に１つずつ取り出す繰り返し
+  for (var i = step; i < array.length; i++) {
 
-            		var tmp = array[i]; // 「挿入する値」を変数に入れて退避する
+    var tmp = array[i]; // 「挿入する値」を変数に入れて退避する
 
-                // 取り出した位置から前に向かって比較を繰り返し
-            		for (var j = i; j >= step; j -= step) {
+    // 取り出した位置から前に向かって比較を繰り返し
+    for (var j = i; j >= step; j -= step) {
 
-                  // 「挿入する値」が小さければ
-            			if (array[j - step] > tmp) {
+      // 「挿入する値」が小さければ
+      if (array[j - step] > tmp) {
 
-            				array[j] = array[j - step]; // step幅だけ後ろへずらす
+        array[j] = array[j - step]; // step幅だけ後ろへずらす
 
-                  // 「挿入する値」が小さくなければ
-	            		} else {
+      // 「挿入する値」が小さくなければ
+      } else {
 
-	            			break; // ずらす処理を終了
-		            	}
-	            	}
+        break; // ずらす処理を終了
+      }
+    }
 
-	            	array[j] = tmp; // ずらす処理が終わったところに「挿入する値」を入れる
-	            }
-	          }
+    array[j] = tmp; // ずらす処理が終わったところに「挿入する値」を入れる
+  }
+}
 
-						console.log("結果:" + array);
-					</code>
-				</section>
+console.log("結果:" + array);
+            </code>
+          </pre>
+        </section>
       </div>
     </div>
 
@@ -392,23 +400,23 @@
     <script src="js/reveal.js"></script>
 
     <script>
-      // More info https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      transition: 'slide', // none/fade/slide/convex/concave/zoom
-      // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: 'plugin/zoom-js/zoom.js', async: true },
-      { src: 'plugin/notes/notes.js', async: true }
-      ]
-      });
+     // More info https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       transition: 'slide', // none/fade/slide/convex/concave/zoom
+       // More info https://github.com/hakimel/reveal.js#dependencies
+       dependencies: [
+         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'plugin/zoom-js/zoom.js', async: true },
+         { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
     </script>
 
   </body>
