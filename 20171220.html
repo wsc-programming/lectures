@@ -170,8 +170,8 @@
         <section data-background-image="http://image.itmedia.co.jp/ait/articles/0808/01/r20algorithm0105.jpg" data-background-size="1000px">
         </section>
         <section>
-					<h2>サーチアルゴリズム</h2>
-				</section>
+			    <h2>サーチアルゴリズム</h2>
+		    </section>
         <section>
           <h2>バブルソート（単純交換法）</h2>
           <p>全ての隣り合う要素の値を比べていて、小さい方を前に移動させる</p>
@@ -202,19 +202,21 @@
 
 						//調べる範囲の開始位置を１つずつ後ろへ移動するfor文
 						for(var i = 0； i < a.length; i++){
+
 							//後ろから前に向かって小さい値を浮かび上がらせるfor文
-							for(var j = a.length - 1； j > i； j-- ){
+              for(var j = a.length - 1； j > i； j-- ){
+
 								//隣りあう２つの値を比べて、後ろが小さければ交換する
 								if(a[j] < a[j - 1]){
-									var tmp = a[j];
-									a[j] = a[j - 1];
-									a[j - 1] = tmp;
-								}
-							}
-						}
-						//ソート後の配列の表示
-						console.log(a);
-					</code>
+						      var tmp = a[j];
+						      a[j] = a[j - 1];
+						      a[j - 1] = tmp;
+				        }
+		          }
+            }
+						            
+            console.log(a); // ソート後の配列の表示
+				  </code>
 				</section>
 				<section>
 					<h2>選択ソート(単純選択法)</h2>
@@ -246,30 +248,30 @@
 
 						//「最小値を入れる位置」を先頭から順番に選択していくfor文
 						for(var i = 0；i < a.length-1；i++){
-							//最小値を探すアルゴリズム
-							//先頭の値を暫定の最小値として初期設定する
-							var min = a[i];
-							//先頭の位置を保存する
-							var k = i;
+	           //最小値を探すアルゴリズム
+	           //先頭の値を暫定の最小値として初期設定する
+	           var min = a[i];
+	           //先頭の位置を保存する
+	           var k = i;
 
-							//隣の位置から最後まで、最小値との比較を繰り返す
-							for(var j = i + 1； j < a.length； j++){
-								//比較して最小値を更新するif文
-								if(min > a[j]){
-									min = a[j];
-									k = j;
-								}
-							}
-							//交換するアルゴリズム
-							//「先頭の値」と「最小値の値」を交換する
-							var tmp = a[i];
-							a[i] = a[k];
-							a[k] = tmp;
+	           //隣の位置から最後まで、最小値との比較を繰り返す
+	           for(var j = i + 1； j < a.length； j++){
+	                                   //比較して最小値を更新するif文
+	                                   if(min > a[j]){
+	           min = a[j];
+	           k = j;
+	           }
+	           }
+	           //交換するアルゴリズム
+	           //「先頭の値」と「最小値の値」を交換する
+	           var tmp = a[i];
+	           a[i] = a[k];
+	           a[k] = tmp;
 
-							//ソートの値を表示
-							console.log(a);
-						}
-					</code>
+	           //ソートの値を表示
+	           console.log(a);
+	           }
+         </code>
 				</section>
         <section>
           <h2>挿入ソート（単純挿入法）</h2>
@@ -284,8 +286,9 @@
           <br></br>
           <p>プログラムは単純。基本的には処理速度が遅いが、すでに整列されている部分が多いほど高速に処理できる</p>
         </section>
-        <section>
-          
+        <section data-background-image="./img/insertion_sort_1.jpg" data-background-size="700px">
+        </section>
+        <section data-background-image="./img/insertion_sort_2.jpg" data-background-size="700px">
         </section>
         <section>
           <h3>問題</h3>
@@ -301,26 +304,77 @@
               var tmp = array[i]; // 挿入する値を変数に代入
 
               // 「整列済みの部分」のどこに挿入すればいいかを
-              // 後ろから前に向かってじゅうんばんい見ていく
+              // 後ろから前に向かって順番に見ていく
               for (var j = i-1; j >= 0; j--) {
 
-                // 
-                if (array[j] > tmp) {
+	              // 
+  	            if (array[j] > tmp) {
 
-                  array[j + 1] = array[j];
+	  	            array[j + 1] = array[j];
 
-                } else {
+      	        } else {
 
-                  break;
-                }
-              }
+  	    	        break;
+          	    }
+            	}
 
-              array[j + 1] = tmp;
-            }
+	            array[j + 1] = tmp;
+  	        }
 
-            console.log("結果:" + array);
-          </code>
+    	      console.log("結果:" + array);
+      	  </code>
+     	  </section>
+        <section>
+          <h2>シェルソート</h2>
+          <p>間隔をあけて挿入ソートを行い、その間隔を徐々に狭めていく方法</p>
         </section>
+        <section>
+          <ul>
+            <li>目的：データを昇順に並べる</li>
+            <li>現状：データの個数とそれぞれの値</li>
+            <li>結果：昇順に並んだ配列</li>
+          </ul>
+          <br></br>
+          <p>単純挿入法より処理速度は速いが、アルゴリズムが難しい</p>
+        </section>
+        <section data-background-image="./img/shell_sort_1.jpg" data-background-size="700px">
+        </section>
+        <section data-background-image="./img/shell_sort_2.jpg" data-background-size="700px">
+        </section>
+        <section>
+          <h3>問題</h3>
+          <p>配列[10, 3, 1, 4, 2]を挿入ソートで昇順に並び替えなさい。</p>
+        </section>
+        <section data-markdown>
+          <code data-trim data-noescape>
+            var array = [10, 3, 1, 4, 2];
+
+            // 「整列していない部分」から、順番に１ずつ取り出していく
+            for (var i = 1; i < array.length; i++) {
+
+              var tmp = array[i]; // 挿入する値を変数に代入
+
+              // 「整列済みの部分」のどこに挿入すればいいかを
+              // 後ろから前に向かって順番に見ていく
+              for (var j = i-1; j >= 0; j--) {
+
+	              // 
+  	            if (array[j] > tmp) {
+
+	  	            array[j + 1] = array[j];
+
+      	        } else {
+
+  	    	        break;
+          	    }
+            	}
+
+	            array[j + 1] = tmp;
+  	        }
+
+    	      console.log("結果:" + array);
+      	  </code>
+     	 </section>
       </div>
     </div>
 
