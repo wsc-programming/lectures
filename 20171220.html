@@ -204,7 +204,7 @@
 						for(var i = 0； i < a.length; i++){
 
 							//後ろから前に向かって小さい値を浮かび上がらせるfor文
-							for(var j = a.length - 1； j > i； j-- ){
+							for(var j = a.length - 1; j > i； j-- ){
 
 								//隣りあう２つの値を比べて、後ろが小さければ交換する
 								if(a[j] < a[j - 1]){
@@ -247,7 +247,7 @@
 						var a = [7, 5, 4, 2];
 
 						//「最小値を入れる位置」を先頭から順番に選択していくfor文
-						for(var i = 0；i < a.length-1；i++){
+						for(var i = 0; i < a.length-1; i++){
 
 							//最小値を探すアルゴリズム
 							//先頭の値を暫定の最小値として初期設定する
@@ -295,37 +295,37 @@
           <h3>問題</h3>
           <p>配列[10, 3, 1, 4, 2]を挿入ソートで昇順に並び替えなさい。</p>
         </section>
-				<section data-markdown>
-					<code data-trim data-noescape>
-						var array = [10, 3, 1, 4, 2];
+        <section data-markdown>
+          <code data-trim data-noescape>
+            var array = [10, 3, 1, 4, 2];
 
-						// 「整列していない部分」から、順番に１ずつ取り出していく
-						for (var i = 1; i < array.length; i++) {
+            // 「整列していない部分」から、順番に１つずつ取り出していく
+            for (var i = 1; i < array.length; i++) {
 
-							var tmp = array[i]; // 挿入する値を変数に代入
+              var tmp = array[i];
 
-							// 「整列済みの部分」のどこに挿入すればいいかを
-							// 後ろから前に向かって順番に見ていく
-							for (var j = i-1; j >= 0; j--) {
+              // 「整列済みの部分」のどこに挿入すればいいかを
+              // 後ろから前に向かって順番に見ていく
+              for (var j = i-1; j >= 0; j--) {
 
-	              // 「挿入する値」が小さければ
-  	            if (array[j] > tmp) {
+                // 「挿入する値」が小さければ
+                if (array[j] > tmp) {
 
-	  	            array[j + 1] = array[j]; // 調べた値を1つ後ろへずらす
+                  array[j + 1] = array[j]; //調べた値を１つずつ後ろへずらす
 
-  	            // 「挿入する値」が小さくなければ
-      	        } else {
+                // 「挿入する値」が小さくなければ
+                } else {
 
-  	    	        break; // ずらす処理終了
-          	    }
-            	}
+                  break; //ずらす処理終了
+                }
+              }
 
-	            array[j + 1] = tmp;　// ずらす処理が終わった位置に「挿入する値」を入れる
-  	        }
+              array[j + 1] = tmp; // ずらす処理が終わった位置に「挿入する値」を入れる
+            }
 
-    	      console.log("結果:" + array); // ソート後の配列を表示する
-      	  </code>
-     	  </section>
+            console.log("結果：" + array);
+          </code>
+        </section>
         <section>
           <h2>シェルソート</h2>
           <p>間隔をあけて挿入ソートを行い、その間隔を徐々に狭めていく方法</p>
@@ -351,24 +351,30 @@
           <code data-trim data-noescape>
             var array = [10, 3, 1, 9, 7, 6, 8, 2, 4, 5];
 
+            // 「グループ分けの間隔」を半分にしていく繰り返し
             for (var step = parseInt(array.length/2); step > ; step = parseInt(step/2)) {
 
+              // 「挿入する値」を順番に１つずつ取り出す繰り返し
             	for (var i = step; i < array.length; i++) {
 
-            		var tmp = array[i];
+            		var tmp = array[i]; // 「挿入する値」を変数に入れて退避する
 
+                // 取り出した位置から前に向かって比較を繰り返し
             		for (var j = i; j >= step; j -= step) {
 
+                  // 「挿入する値」が小さければ
             			if (array[j - step] > tmp) {
 
-            				array[j] = array[j - step];
+            				array[j] = array[j - step]; // step幅だけ後ろへずらす
+
+                  // 「挿入する値」が小さくなければ
 	            		} else {
 
-	            			break;
+	            			break; // ずらす処理を終了
 		            	}
 	            	}
 
-	            	array[j] = tmp;
+	            	array[j] = tmp; // ずらす処理が終わったところに「挿入する値」を入れる
 	            }
 	          }
 
