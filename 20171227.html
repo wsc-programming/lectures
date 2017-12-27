@@ -393,6 +393,77 @@ console.log("結果:" + array);
             </code>
           </pre>
         </section>
+        <section>
+          <h2>クイックソート</h2>
+          <p>再帰という考え方を使っていて名前の通り処理が速い方法</p>
+        </section>
+        <section>
+          <ol>
+            <li>真ん中にある値を基準にして、データを大小2つのグループに分割する</li>
+            <li>分割したグループそれぞれに同じ処理を繰り返す</li>
+          </ol>
+          <br></br>
+          <ul>
+            <li>交換回数を減らすために交換する必要のあるもの同士で交換する</li>
+            <li>アルゴリズムをシンプルにするために、「再帰」を使う</li>
+          </ul>
+        </section>
+        <section data-background-image="./img/quicksort.jpg" data-background-size="600px">
+        </section>
+        <section>
+          <h3>問題</h3>
+          <p>配列[10, 3, 1, 9, 7, 6, 8, 2, 4, 5]をクイックソートで昇順に並び替えなさい。</p>
+        </section>
+        <section>
+          <pre>
+            <code class="javascript" data-trim data-noescape>
+function quickSort(startID, endID) {
+  var pivot = array[Math.floor((startID + endID) / 2)]; // 範囲の中央にある値を「ピボット」とする
+  var left = startID; // 調べるleftの位置を初期値に代入
+  var right = endID; // 調べるrightの位置を初期値に代入
+
+  // ピポットより小さい値を左側へ、大きい値を右側へ分割する
+  while (true) {
+
+    // leftの値がピボットより小さければ、leftを１つ右へ進める
+    while (array[left] < pivot) {
+      left++;
+    }
+
+    // rightの値がピボットより小さければ、rightを１つ左へ進める
+    while (array[right] > pivot) {
+      right--;
+    }
+
+    // rightとleftがぶつかったら分割終了
+    if (right <= left) {
+      break;
+    }
+
+    var tmp = array[left];
+    array[left] = array[right];
+    array[right] = tmp;
+    left++;
+    right--;
+  }
+
+  if (startID < left-1) {
+    quickSort(startID, left-1)
+  }
+
+  if (right+1 < endID) {
+    quickSort(right+1, endID)
+  }
+}
+
+array = [10, 3, 1, 9, 7, 6, 8, 2, 4, 5];
+
+quickSort(0, array.length-1);
+
+console.log("ソート後：" + array);
+            </code>
+          </pre>
+        </section>
       </div>
     </div>
 
