@@ -447,10 +447,12 @@ function quickSort(startID, endID) {
     right--;
   }
 
+  // もし左側に分割するデータがあったら
   if (startID < left-1) {
     quickSort(startID, left-1)
   }
 
+  // もし右側に分割するデータがあったら
   if (right+1 < endID) {
     quickSort(right+1, endID)
   }
