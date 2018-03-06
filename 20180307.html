@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>７．３層クライアントサーバシステム</h3>
+          <p>説明</p>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>htmlの動作はクライアント側での処理</li>
+            <li>業務処理はサーバ側</li>
+            <li>〇</li>
+            <li>httpリクエストを受けるのはサーバ側、apache、nginx</li>
+          </ul>
+        </section>
+        <section>
+          <h3>８．信頼性設計</h3>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>〇</li>
+            <li>フールプルーフ</li>
+            <li>シミュレータ</li>
+            <li>フォールバック</li>
+          </ul>
+          <p>基本、応用で出るものがある</p>
+        </section>
+        <section>
+          <p>フォールトアボイダンス：1つ1つの構成要素の信頼性を向上させたり、フールプルーフを取り入れた設計をすることにより、障害を発生させにくくすること</p>
+          <p>フォールトトレランス：システム構成を2重化したり、フェールセーフやフェールソフトを取り入れた設計をすることにより、障害が発生しても耐えられるようにすること</p>
+        </section>
+        <section>
+          <h3>９．ベンチマークテスト</h3>
+          <p>ベンチマークテストとはシステムの性能を計る目安で、システムを評価するテスト用プログラムを書いて処理にかかった時間を測定</p>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>ソフトウェアモニタリング</li>
+            <li>〇</li>
+            <li>シミュレータにシミュレーション</li>
+            <li>命令ミックスによる静的積算</li>
+          </ul>
+        </section>
+        <section>
+          <h3>１０．システム稼働率</h3>
+          <p>複合システムの稼働率</p>
+          <p>直列システム：(装置1の稼働率)×(装置2の稼働率)</p>
+          <p>並列システム：1-(1-装置1の稼働率)×(装置2の稼働率)</p>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <p>答え．ウ</p>
+        </section>
+        <section>
+          <h3>１１．仮想記憶方式</h3>
+          <p>記憶管理、主記憶装置の代わりにハードディスクなどの比較的高速な補助記憶装置を用いて、容量の大きな記憶空間を作り、プログラムを実行させる方法</p>
+          <p>ページング方式の説明</p>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <p>FIFO：１→３→２→１→④→⑤→２→③→４→５</p>
+          <p>LRU：１→３→２→１→④→⑤→②→③→④→⑤</p>
+          <p>答え．イ</p>
+        </section>
+        <section>
+          <h3>１２．直接編成ファイルへの格納</h3>
+          <p>ファイル編成とは記憶媒体場へのレコードを格納する方式のこと。windowsでいうドライブに格納</p>
+          <p>直接編成ファイルとは関数を用いてレコードのキー値をアドレスに変換し、記憶媒体の格納位置を決める編成法</p>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <ul style="list-style-type: none">
+            <li>(1) 3,4,8,13,14,18</li>
+            <li>(2) 5で割ったときのあまりに+1すると4,5,4,4,5,4</li>
+            <li>4=>3, 5=>4, 6=>8, 1=>13, 2=>14, 3=>18</li>
+          </ul>
+        </section>
+        <section>
+          <h3>１３．コンパイラの最適化</h3>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <p>コンパイラの最適化では、オブジェクトコードの生成を行う前に、実行が効率的に行われるようにレジスタの割り付け、論理式や不要な演算の整理などを行う</p>
+        </section>
+        <section>
+          <h3>１４．静的テストツール</h3>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>〇</li>
+            <li>テストベッドツール</li>
+            <li>テストカバレージツール</li>
+            <li>テストデータ生成ツール</li>
+          </ul>
+        </section>
+        <section>
+          <h3>１５．オープンソースソフトウェア</h3>
+        </section>
+        <section>
+          <h4>条件</h4>
+          <ol>
+            <li>再頒布の自由</li>
+            <li>ソースコードが入手可能</li>
+            <li>変更および派生ソフトウェアを作成可能で、同じライセンス下での頒布を許可</li>
+            <li>作者のソース個d0尾の完全性を保障</li>
+            <li>個人やグループに対する差別の禁止</li>
+            <li>利用する分野に対する差別の禁止（商用も可）</li>
+            <li>再頒布において追加ライセンスを必要としない</li>
+            <li>特定製品でのみ有効なライセンスの禁止</li>
+            <li>他のソフトウェアを制限するライセンスの禁止</li>
+            <li>技術的に中立でなければならない</li>
+          </ol>
+        </section>
+        <section>
+          <h4>ライセンスの種類</h4>
+          <ul>
+            <li>GPL：</li>
+            <li>BSDL：</li>
+            <li>MPL：</li>
+          </ul>
+        </section>
+        <section>問題画像</section>
+        <section>
+          <p>GPLはコピーレフトを実現するライセンス、販売する際に非公開にはできない。</p>
+          <p>答え．ウ</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+     // More info https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       transition: 'slide', // none/fade/slide/convex/concave/zoom
+       // More info https://github.com/hakimel/reveal.js#dependencies
+       dependencies: [
+         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'plugin/zoom-js/zoom.js', async: true },
+         { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
+    </script>
+
+  </body>
+</html>
