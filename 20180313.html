@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>WSC Lecture 20170313</h2>
+        <p>by $TeraCode</p>
+      </section>
+      <section>
+        <h2>基本情報技術者試験</h2>
+      </section>
+      <section>
+        <h3>１２.　データ管理とファイルシステム</h3>
+      </section>
+      <section>
+        <h4>汎用コンピューターのOSではデータをファイル、データを格納している装置をボリュームと呼んでいます。（Windowではdrive）</h4>
+        <table>
+          <thead>
+            <h5>ファイル</h5>
+            <tr>
+              <th>レコード1</th>
+              <th></th>
+              <th></th>
+              <th>レコード2...</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>社員番号</td>
+              <td>電話番号</td>
+              <td>氏名</td>
+              <td>住所</td>
+            </tr>
+            <tr>
+              <td>20202020</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1000010</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>ファイルの構成単位をレコードと言い、１レコードは複数の項目（フィールド）で出来ている</p>
+      </section>
+      <section>
+        <h2>ファイル編成</h2>
+        <p>ファイル編成とは、記録媒体上へレコードを格納する方式のことで、用途によっていくつかの種類があります。</p>
+        <ul>
+          <li>順編成ファイル</li>
+          <li>直接編成ファイル</li>
+          <li>区分編成ファイル</li>
+        </ul>
+        <li>索引順編成ファイル</li>
+      </section>
+      <section>
+        <h3>順編成ファイル</h3>
+        <small>ファイルの先頭からレコードを連続して記録していく方式です。レコードが連続して記録されているので、格納効率が良いのですが、どのレコードがどの位置にあるかを示す制御情報が一切含まれていないので、特定のレコードへ直接アクセスすることはできず、先頭レコードから順に読み込んでいく必要があります。こうしたアクセス方式は、順次アクセスといいます。順編成ではレコードが順に並んでいるため、レコードの追加、削除をする場合は、ファイルを再作成しなければなりません</small>
+        <img src="http://www.it-shikaku.jp/kougi/e/image412.gif" style="width: 80%;">
+      </section>
+      <section>
+        <h3>直接編成ファイル</h3>
+        <small>キー値を、レコードが格納されているアドレスに変換して、ファイルにアクセスする方式です。このアクセス方式を直接アクセスといいます。順編成とは異なり、レコード記録順を問わないため、レコードの追加や削除は容易であるという長所があります。キー値からアドレスに変換する際、キー値をそのままアドレスに適用する場合や、キー値とアドレスの変換表などを用いる場合は、直接アドレス方式といいます。キー値から直接、アドレスを導くので、大量のデータ処理には向いていません。</small>
+        <img src="http://www.it-shikaku.jp/kougi/e/image5.jpg" style="width: 8  0%;">
+      </section>
+      <section>
+        <h3>区分編成ファイル</h3>
+        <small>1つのファイルをいくつかの領域に区分けしたメンバと呼ばれる領域と、メンバが位置するアドレス情報を管理するディレクトリから構成されます。メンバの内部は、順編成で構成されているので、格納効率がよいという長所があります。また、レコードを更新する場合でもメンバ単位で再作成すればよいので、順編成よりは処理効率がよいです</small>
+        <img src="http://www.it-shikaku.jp/kougi/e/image6.gif" style="width: 50%;">
+      </section>
+      <section>
+        <h3>索引順編成ファイル</h3>
+        <small>索引情報が集められた索引領域、レコードが記録される基本データ領域、基本データ領域からあふれたレコードを記録するあふれ領域から構成されます。直接編成と区分編成の特徴をあわせた様な構成なので、順次アクセス、直接アクセスどちらでも可能です。あふれ領域を用意することで、レコードの追加や削除にも柔軟に対応できるようになっています。</small>
+        <img src="http://www.it-shikaku.jp/kougi/e/FE2000F_44_a4.gif" style="width: 60%;">
+      </section>
+      <section data-background-image="img/20180313/2-12.jpg" data-background-size="1200px">
+      </section>
+      <section>
+        <ul>
+          <li>3[4] -> 4[4] -> 8[4] -> 13[4] -> 14[5] -> 18[4]</li>
+          <li>13[1] -> 14[2] -> 18[3] -> 3[4] -> 4[5] -> 8[6]</li>
+        </ul>
+      </section>
+      <section>
+        <h3>１３．　コンパイラの最適化</h3>
+        <p>コンパイラの最適化では、オブジェクトコードの生成を行う前に、実行が効率的に行われるようにレジスタの割り付け、論理式や不要な演算の整理などを行う</p>
+      </section>
+      <section>
+        <h4>言語プロセッサ</h4>
+        <p>プログラム言語で記述したプログラム（原子プログラム、ソースコード）は、機械語に翻訳される必要があり、その際に使用されるのが、</br>言語プロセッサである。</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLdeq_ktZTBCWJCowL67w3eNi3h2kHFawGdv-cNP6taDeMXAk-sA" style="width: 100%;">
+      </section>
+      <section data-background-image="http://www.pcpulab.mydns.jp/main/it/images/language.jpg" data-background-size="1000px">
+      </section>
+      <section>
+        <h5>アサンブラ（assembler）</h5>
+        <small>アセンブラ言語は、機械言語を記号化した言語であり、基本的に機械言語と同等である。記号で記述したアセンブラ言語を機械言語に翻訳するプロセッサをアセンブラと呼ぶ。この場合、翻訳といっても基本的には１対１の翻訳でしかない。</br>つまりアセンブラ命令１に対し、機械語命令１が生成されることになる。</small>
+      </section>
+      <section>
+        <h5>コンパイラ（conpiler）</h5>
+        <small>コンパイラ言語は、比較的人間が習得しやすい英文と数式を主に使って記述する言語である。コンパイラ言語で記述されたプログラムを機械言語に翻訳するプロセッサをコンパイラと呼ぶ。コンパイラによる翻訳は、アセンブラと違い１命令に対して複数の機械語命令を生成するのが特徴である。そのためコンパイラで翻訳した機械語プログラムは、アセンブラで翻訳した機械語プログラムに比べ、処理効率が劣ると考えられる。またコンパイラの多くはプログラム実行を高速化する最適化機能を持っている</small>
+      </section>
+      <section>
+        <h5>インタプリタ（interpreter）</h5>
+        <small>アセンブラやコンパイラがプログラムを翻訳して機械語プログラムを生成するのに対し、インタプリタは、機械語プログラムを生成せず、実行時にプログラムを１行ずつ翻訳して機械語命令を生成し、即時に実行する仕組みになっている。そのため実行時に翻訳することになるので他の言語プロセッサに比べると処理効率に劣ることになる。ｗｅｂでよく使われるＪａｖａＳｃｒｉｐｔやPerlは、スクリプト言語と呼ばれるがこれもインタプリタ言語の一種である。これらの言語は、機能的には本格的なプログラム言語に比べて少ないものの習得も容易で特にＷｅｂではHTMLと併用することでインタラクティブなＷｅｂページを作成できることから良く使われている。</small>
+      </section>
+      <section>
+        <h5>ジェネレーター（generator）</h5>
+        <small>このプロセッサは、ＲＰＧ言語で採用されている方式で、必要なパラメータを設定したら、それに応じて報告書を作成するプログラムを作成してくれる</br>プロセッサである。</small>
+      </section>
+      <section>
+        <h5>コンパイラによる実行過程</h5>
+        <img src="http://www.gadgety.net/shin/tips/images/compiler/phase.gif" style="width: 100%;">
+      </section>
+      <section data-background-image="img/20180313/2-13.jpg" data-background-size="1200px">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>中間コードを生成する目的は、後続のインタプリタが最適化を行いやすくするため。</li>
+          <li>クロスコンパイラの説明</li>
+          <li>〇</li>
+          <li>ソフトウェアのデバッグを支援するプログラムであるデバッガの説明</li>
+        </ul>
+      </section>
+      <section>
+        <h3>１４．静的テストツール</h3>
+      </section>
+      <section>
+        <ul>
+          <li>静的テストツール：プログラムを実行せずに、ソースプログラムの解析やテストケースの抽出などを行う。</li>
+          <li>動的テストツール：テストデータを自動生成して実行したり、制御の流れをトレースして解析に必要な情報を出力する。</li>
+        </ul>
+      </section>
+      <section data-background-image="img/20180313/2-14.jpg" data-background-size="1200px">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>〇</li>
+          <li>テストのための動作環境を提供するテストベッドツールの説明</li>
+          <li>実際に多数のテストケースでプログラムを行ない実行経路の網羅状態を確認するテストカバレージモニタの説明です。</li>
+          <li>プログラムの記述や入力データの構造をもとにテストデータを自動生成するテストデータ生成ツールの説明</li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <h3>１５．オープンソースソフトウェア</h3>
+    </section>
+    <section>
+      <h4>条件</h4>
+      <ol>
+        <li>再頒布の自由</li>
+        <li>ソースコードが入手可能</li>
+        <li>変更および派生ソフトウェアを作成可能で、同じライセンス下での頒布を許可</li>
+        <li>作者のソースコードの完全性を保障</li>
+        <li>個人やグループに対する差別の禁止</li>
+        <li>利用する分野に対する差別の禁止（商用も可）</li>
+        <li>再頒布において追加ライセンスを必要としない</li>
+        <li>特定製品でのみ有効なライセンスの禁止</li>
+        <li>他のソフトウェアを制限するライセンスの禁止</li>
+        <li>技術的に中立でなければならない</li>
+      </ol>
+    </section>
+    <section>
+      <h4>ライセンスの種類</h4>
+      <ul>
+        <li>GPL：</li>
+        <small>「GPLライセンスのソフトウェアやプログラムを使用した場合、その制作物もGPLライセンスで配布しなければならない」(コピーレフト)</small>
+        <li>BSDL：</li>
+        <small>「改変して独占販売、ソフトウェアだけ頒布してソースを非公開にしてもいい。」</small>
+        <li>MPL：</li>
+        <small>「ソースコードが独立して１つのファイルとなっている状態であれば、すべてをMPLにする必要は無い」(コピーレフト’)</small>
+      </ul>
+    </section>
+    <section data-background-image="img/20180313/2-15.jpg" data-background-size="1200px">
+    </section>
+    <section>
+      <p>GPLはコピーレフトを実現するライセンス、販売する際に非公開にはできない。</p>
+      <p>答え．ウ</p>
+    </section>
+    <section data-background-image="img/20180313/3-1.jpg" data-background-size="1200px">
+    </section>
+    <section>
+      <p>8000 * 1.2³ <= 26ⁿ  が成り立つ場合のnの最小値</p>
+      <p>答え．ア　３</p>
+    </section>
+    <section>
+      <h2>３章</h2>
+      <h3>1. ヒューマンインターフェース<h3>
+      </section>
+      <section>
+        <small>ユニバーサルユーザビリティーという概念の提唱者であるシュナイダーマンが唱える</small>
+        <h5>「ヒューマンインタフェースの8指針」</h5>
+        <ol>
+          <li>一貫性をもたせる</li>
+          <li>頻繁に使う利用者には近道を用意する</li>
+          <li>利用者にフィードバックを与える</li>
+          <li>利用者に達成感を与える</li>
+          <li>利用者のエラー検出と回復を用意にする</li>
+          <li>逆操作が可能である</li>
+          <li>利用者が主体的に制御できるようにする</li>
+          <li>利用者の短期記憶への負担を軽くする</li>
+        </ol>
+      </section>
+      <section>
+        <h4>２．　入力データチェック</h4>
+        <p>画面から入力されたデータが制約条件に合致しているかどうかをチェックすることで、入力ミスしにくい（データの正確さが増す）</p>
+      </section>
+      <section>
+        <ul>
+          <li>照合チェック</li>
+          <small>データが所定の集合に存在するかをチェックする。</small>
+          <li>重複チェック</li>
+          <small>データの重複をチェックする。</small>
+          <li>論理チェック</li>
+          <small>データの条件、関連性などから論理的に妥当かをチェックする。</small>
+          <li>ニューメリックチェック</li>
+          <small>データが数字であるかチェックする。</small>
+          <li>フォーマットチェック</li>
+          <small>データの桁数や構文規則などの書式をチェックする。</small>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>リミットチェック</li>
+          <small>限界値を超えていないかチェックする。</small>
+          <li>レンジチェック</li>
+          <small>下限値から上限値までの範囲から外れていないかチェックする。</small>
+          <li>カウントチェック</li>
+          <small>データ群の件数をチェックする。</small>
+          <li>シーケンスチェック</li>
+          <small>データ群が順番に並んでいるかをチェックする。</small>
+          <li>バランスチェック</li>
+          <small>データ群が所定のバランスを保っているかをチェックする。</small>
+        </ul>
+      </section>
+      <section data-background-image="img/20180313/3-2.jpg" data-background-size="1200px">
+      </section>
+      <section>
+        <p>注文日が、注文データの入力した日より前かどうか、休日ではないか複数の条件から判断が必要</p>
+        <p>答え．エ　 論理的チェック</p>
+      </section>
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+  </script>
+
+</body>
+</html>
