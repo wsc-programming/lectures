@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>WSC Lecture 20170321</h2>
+        <h4>by $TeraCode</h4>
+      </section>
+      <section>
+        <h3>基本情報技術者</h3>
+      </section>
+
+      <section>
+        <h4>入力データチェック</h4>
+      </section>
+      <section>
+        <p>ヒューマンインターフェース設計：人とコンピュータを結ぶ入出力機器や入出力方式のこと。人間の特性（感覚特性、動作特性、人為ミスの可能性、疲労、人間の記憶容量、学習能力）を考慮したうえで設計を行うことが重要</p>
+        <p>入力データのチェック：適切なチェック、誤りを未然に防ぎ、データの正確性が増します。</p>
+      </section>
+      <section>
+        <ul>
+          <li>照合チェック：入力データが原本のデータを突き合わせて、不一致がないかを検査</li>
+          <li>リミットチェック：データが規定の範囲内かどうかを検査</li>
+          <li>ニューメリックチェック：数値を入力すべきところに、文字などが入っていないか検査</li>
+          <li>シーケンスチェック：ある項目をキーとして、指定の順になっているかを検査</li>
+          <li>フォーマットチェック：入力データと入力項目の桁数や桁位置を検査</li>
+          <li>重複チェック：データの重複の有無を検査</li>
+        </ul>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <p>答え．エ</p>
+      </section>
+
+      <section>
+        <h4>音声データのデータ量</h4>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <p>1秒間に11000回のサンプリングを行い、8ビットのデータとして記録するので、</p>
+        <p>11(kバイト/秒) × 1(バイト) = 11(kバイト/秒)</p>
+        <p>フラッシュメモリの容量から記録秒数を求めると、</p>
+        <p>(512×10^6) ÷ (11×10^3) = 46.5×10^3</p>
+        <p>46500(秒)÷60(秒)=755(分)</p>
+        <p>答え．ウ</p>
+      </section>
+
+      <section>
+        <h4>クリッピングの説明</h4>
+      </section>
+      <section>
+        <p>3次元の情報などをもとに、立体感のある2次元画像(3DCG)を作り出す処理をレンダリングという。次のの処理順次行う。</p>
+      </section>
+      <section>
+        <ul>
+          <li>透視投影：3次元形状を2次元画像に投影。画角や消失点によって表示領域外となる部分を除外する。（クリッピング）</li>
+          <li>隠面消去：手前の物体によって隠れる部分を削除。カメラから物体へ届く光を追跡し、物体と光の交点ごとに一番手前になる面を計算する方法を、レイトレーシングという。</li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>ラスタライズ：数値で表されていた形状を、対応する画素で表現。ジャギーを目立たないように加工する処理をアンチエイリアシングという。</li>
+          <li>陰影付け：光の当たり具合などによって、表面の色の濃淡をつけるシェーディングを行う。また、光が遮られる部分に影を付ける（シャドーイング）</li>
+          <li>効果付与：表面の素材感を付与。これをテクスチャマッピングという。</li>
+        </ul>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>ラスタライズ</li>
+          <li>〇</li>
+          <li>アンチエイリアシング</li>
+          <li>シェーディング</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>データの正規化</h4>
+      </section>
+      <section>
+        <h3>データベース設計</h3>
+        <p>データベースの設計ではまずE-Rモデルにより、概念設計を行う。エンティティ（実体）と実体とのリレーションシップ（関連）、さらに実体や関連が持つアトリビュート（属性）</p>
+        <p>E-Rモデルによる概念設計をもとに、具体的なデータベースとして構築していく作業が論理設計</p>
+      </section>
+      <section>》p.176 E-Rモデルの例《</section>
+      <section>
+        <h3>データベースの論理設計</h3>
+        <p>E-Rモデルによる概念設計をもとに、具体的なデータベースとして構築していく作業が論理設計です。</p>
+        <p>》p.177 主キーと外部キー《</p>
+      </section>
+      <section>
+        <p>関係モデルでデータベースを構築する際に必要な作業が正規化です。目的はデータの冗長性をなくし、一貫性と整合性を保つことで、一般に第三正規化まで行います。</p>
+        <a href="http://www.kogures.com/hitoshi/webtext/db-seikika/">http://www.kogures.com/hitoshi/webtext/db-seikika/</a>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <a href="http://www.fe-siken.com/kakomon/29_haru/q25.html">http://www.fe-siken.com/kakomon/29_haru/q25.html</a>
+        <p>答え．イ</p>
+      </section>
+
+      <section>
+        <h4>RDBMSのスキーマ</h4>
+      </section>
+      <section>
+        <h3>データベースのモデル</h3>
+        <p>スキーマ(schema)は、データの内容，データの論理構造，記憶形式や編成などデータベースの構造を記述したものです。ANSI/X3/SPARCではスキーマを、概念スキーマ，外部スキーマ，内部スキーマの3つのグループに分ける提案を行い、これを3層スキーマアーキテクチャといいます。</p>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <p>解答解説</p>
+        <ul style="list-style-type: katakana;">
+          <li>ビューの説明</li>
+          <li>〇</li>
+          <li>SQLの説明</li>
+          <li>整合性制約の説明</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>関数従属している項目</h4>
+      </section>
+      <section>
+        <p>関係データベースにおける「関数従属」とは、「社員ID→社員名」や「保険証番号→{個人名，住所，生年月日}」などのように、ある属性の値によって別の属性の値が一意に決まる関係をいいます。</p>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <a href="http://www.fe-siken.com/kakomon/28_aki/q27.html">http://www.fe-siken.com/kakomon/28_aki/q27.html</a>
+        <p>答え．ア</p>
+      </section>
+
+      <section>
+        <h4>外部キーの目的</h4>
+      </section>
+      <section>
+        <p>外部キー制約は、関係データベースの2つのテーブルの間の参照整合性を保つための制約で、SQLでは設定する属性に対して「FOREIGN KEY句」を指定します。正規化された表同士を外部キーで結合することでデータの一貫性・正当性を保つことができます。</p>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <p>答え．ア</p>
+      </section>
+
+      <section>
+        <h4>文字列のワイルドカード指定</h4>
+      </section>
+      <section>
+        <p>LIKE句は、0文字以上の任意の文字列にマッチする「%」、任意の1文字にマッチする「_」などのワイルドカードと呼ばれる文字を使用して、文字列パターンを条件に指定可能にする句です。</p>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <p>書名に"UNIX"が含まれている行を抽出したいので、文字以上の任意の文字列にマッチする「%」を前後に付加した「%UNIX%」を指定するのが適切です。</p>
+        <p>答え．イ</p>
+      </section>
+
+      <section>
+        <h4>データベースの障害回復</h4>
+      </section>
+      <section>
+        <h3>トランザクション</h3>
+        <p>トランザクションとは、データベースに対するひとまとまりの要求単位を指す。</p>
+        <p>データベースに多くのトランザクションが集中し、だ多大な負荷がかかることで障害が発生することがあります。その際の回復のための方策としてバックアップ、ログを取得したりする。</p>
+      </section>
+      <section>
+        <ul>
+          <li>ロ―ルバック処理：トランザクションの途中、プログラムのバグなどでアプリケーションから の応答がなくなったり強制終了した場合に、更新前ジャーナル(ログ)を用いて データベースをトランザクション開始直前の状態に戻す処理です。</li>
+          <li>ロールフォワード処理：データベースシステムに障害が起こったときに、更新後ログを用いて今まで処理したトランザクションを再現しシステム障害直前までデータベース情報を復帰させる処理です。</li>
+        </ul>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <p>解答解説</p>
+        <ul style="list-style-type: katakana;">
+          <li>トランザクション処理で読書きが必要になったデータにその都度ロック をかけていき、全てのロックを獲得した後にだけロックの解除を行うことができる ロッキングプロトコル</li>
+          <li>ログを使わないトランザクションの障害回復手法</li>
+          <li>ロールバック</li>
+          <li>〇</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>デッドロックの説明</h4>
+      </section>
+      <section>
+        <p>DBMSには重複するアクセスを防ぐ排他制御機能が必要。</p>
+        <ul>
+          <li>共有ロック：複数のプログラムが同時に読み出すことのみ許可する。</li>
+          <li>専有ロック：更新処理中のプログラム以外の読み書きを一切許可しない。</li>
+          <li>デッドロック：２つのプログラムがお互いに相手が要求するデータの解放を待ったまま、永久に待ち状態から抜け出せなくなる状態</li>
+        </ul>
+      </section>
+      <section>
+        <p>問題写真</p>
+      </section>
+      <section>
+        <p>解答解説</p>
+        <ul style="list-style-type: katakana;">
+          <li>×</li>
+          <li>専有ロック</li>
+          <li>排他制御</li>
+          <li>〇</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+
+</body>
+</html>
