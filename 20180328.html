@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>WSC Lecture 20170321</h2>
+        <h4>by $TeraCode</h4>
+      </section>
+      <section>
+        <h3>基本情報技術者</h3>
+      </section>
+      <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+				<script type="text/template">
+           ## 基本情報技術者これまでの復習
+           ### 小テスト
+           #### 範囲
+           ##### （基礎理論/コンピューターシステム/技術要素）
+
+           --
+
+             1.次の10進小数のうち，2進数で表すと無限小数になるものはどれか。
+
+           --
+         
+             2.ドローソフトを説明したものはどれか。
+
+           --
+
+             3.トランザクションTはチェックポイント取得後に完了したが，その後にシステム障害が発生した。データベースをトランザクションTの終了直後の状態に戻すために用いられる復旧技法はどれか。ここで，チェックポイントの他に，トランザクションログを利用する。
+
+           --
+
+             4.配列と比較した場合の連結リストの特徴に関する記述として，適切なものはどれか。
+
+           --
+
+             5.2,000個の相異なる要素が，キーの昇順に整列された表がある。外部から入力したキーによってこの表を2分探索して，該当するキーの要素を取り出す。該当するキーが必ず表中にあることが分かっているとき，キーの比較回数は最大何回か。
+
+           --
+
+             6 ページプリンタで，画像と漢字コードが混在しているデータを印刷するための処理方法に関する記述として，適切なものはどれか。
+
+           --
+
+             7.MTBFが45時間でMTTRが5時間の装置がある。この装置を二つ直列に接続したシステムの稼働率は幾らか。
+
+           --
+
+             8.pを2以上の整数とする。任意の整数nに対して，
+             n＝kp＋m (0≦m＜p)
+             を満たす整数kとmが一意に存在する。このmをnのpによる剰余といい，n mod pで表す。(－10000) mod 32768に等しくなるものはどれか。
+
+           --
+
+             9.クイックソートの処理方法を説明したものはどれか。
+
+           --
+
+             10.PCのクロック周波数に関する記述のうち，適切なものはどれか。
+
+           --
+
+             11.図の論理回路と等価な回路はどれか。
+           ![](https://i.imgur.com/1ZGGEWV.png)
+
+           --
+
+             12.500バイトのセクタ8個を1ブロックとして，ブロック単位でファイルの領域を割り当てて管理しているシステムがある。2,000バイト及び9,000バイトのファイルを保存するとき，これら二つのファイルに割り当てられるセクタ数の合計は幾らか。ここで，ディレクトリなどの管理情報が占めるセクタは考慮しないものとする。
+
+           --
+
+             13.負数を2の補数で表す8ビットの数値がある。この値を10進数で表現すると－100である。この値を符号なしの数値として解釈すると，10進数で幾らか。
+
+           --
+
+             14."商品"表のデータが次の状態のとき，〔ビュー定義〕で示すビュー"収益商品"の行数が減少する更新処理はどれか。.
+           ![](https://i.imgur.com/79i3CTT.png)  
+           〔ビュー定義〕
+            CREATE VIEW 収益商品
+           　AS SELECT * FROM 商品
+            　WHERE 売値－仕入値 >= 40000
+
+           --
+
+             15.UNIXにおける正規表現 [A－Z]＋[0－9]＊ が表現する文字列の集合の要素となるものはどれか。ここで，正規表現は次の規則に従う。
+            - [A－Z]は，英字1文字を表す。
+            - [0－9]は，数字1文字を表す。
+            - ＊は，直前の正規表現の0回以上の繰返しを表す。
+            - ＋は，直前の正規表現の1回以上の繰返しを表す。
+
+           --
+
+             16.コンピュータシステムのベンチマークテストの説明として，最も適切なものはどれか
+
+           --
+
+             17.関係モデルとその実装である関係データベースの対応に関する記述のうち，適切なものはどれか。
+
+           --
+
+             18.キャッシュメモリのアクセス時間及びヒット率と，主記憶のアクセス時間の組合せのうち，主記憶の実効アクセス時間が最も短くなるものはどれか。
+           ![](https://i.imgur.com/CauqAfL.png)
+
+           --
+
+             19.三つの実数X～Zとそれぞれの近似値が次の場合，相対誤差の小さい順に並べたものはどれか。
+           ![](https://i.imgur.com/v95ulIJ.png)
+
+           --
+
+             20."社員"表と"部門"表に対し，次のSQL文を実行したときの結果はどれか。
+           ![](https://i.imgur.com/QfrmqoK.png)
+
+        </script>
+      </section>
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+
+</body>
+</html>
