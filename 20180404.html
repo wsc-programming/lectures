@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>WSC Lecture 20170404</h2>
+        <h4>by $TeraCode</h4>
+      </section>
+      <section>
+        <h3>基本情報技術者</h3>
+      </section>
+      <section>
+        <h3>問１</h3>
+        <p>計算</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-1.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section>
+        <h3>問２</h3>
+      </section>
+      <section>
+        <p>ネットワーク接続形態：ネットワークトポロジ</p>
+        <p>画像埋め込み</p>
+      </section>
+      <section>
+        <p>LANでは共有する伝送路が長時間専有されてしまうのを防ぐため、データをパケットやフレームと呼ばれる小さい単位に分割して転送を行います。どちらもデータそのものに加えて、宛先や送信元といったアドレス情報や組み立てる際に必要となるシーケンス番号を持っている。</p>
+      </section>
+      <section>
+        <p>CSMA/CD方式は、Carrier Sense Multiple Access with Collision Detectionの略で、日本語に訳すと「搬送波感知多重アクセス／衝突検出方式」となります。CSMA/CD方式は一本の同軸ケーブルに複数のコンピュータが接続されているバス型のトポロジを前提としており、次のような手順で送信が行われます。</p>
+      </section>
+      <section>
+        <ul>
+          <li>伝送路上に他のノードからフレームが送出されていないかを確認する。
+          複数のクライアントは同じ回線を共用し、他者が通信をしていなければ自分の通信を開始する。</li>
+          <li>複数の通信が同時に行われた場合は衝突を検出し、送信を中止してランダム時間待ってから再び送信をする。</li>
+        </ul>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-2.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>優先度制御方式</li>
+          <li>〇</li>
+          <li>トークンパッシング方式：主にリング型のLANに採用され、伝送路上にトークンと呼ぶ特別なフレームを1つだけ巡回させておき、このトークンを保有しているノード（端末）だけが送信権を得る方式です。</li>
+          <li>TDMA方式：時間を分割して各端末に送信権を与えるアクセス方式です。</li>
+        </ul>
+      </section>
+      <section>
+        <h3>問３</h3>
+      </section>
+      <section>
+        <p>ネットワークアーキテクチャ</p>
+        <p>OSI基本参照モデル</p>
+      </section>
+      <section>
+        <ul>
+          <li>物理層：電気信号の取り決め、接続用のケーブルやコネクタのピンの形状</li>
+          <li>データリンク層：隣接する端末間において、確実なデータ転送を行うためのプロトコルを規定</li>
+          <li>ネットワーク層：目的に端末までの通信路。経路選択と中継機能により、パケットを送受信します。</li>
+          <li>トランスポート層：通信網に依存しない高品質な通信路を設定</li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>セション層：論理的な通信路の確立や切断を行い、通信方法を決める。</li>
+          <li>プレゼンテーション層：共通な形式に変換。暗号化やデータの圧縮、伸張。</li>
+          <li>アプリケーション層：アプリケーションに応じたデータ通信機能を提供</li>
+        </ul>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-3.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>〇</li>
+          <li>アプリケーション層</li>
+          <li>物理層</li>
+          <li>データリンク層</li>
+        </ul>
+      </section>
+      <section>
+        <h3>問４</h3>
+      </section>
+      <section>
+        <p>LAN間接続装置</p>
+        <p>スイッチングハブ：宛先が存在するポートにだけパケットを流すスイッチング機能を持つ。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-4.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>DHCP(Dynamic Host Configuration Protocol)が提供する機能。インターネットなどのネットワークに一時的に接続するコンピュータに、IPアドレスなど必要な情報を自動的に割り当てるプロトコル。</li>
+          <li>〇</li>
+          <li>ハブ(リピータハブ)：第1層で単純に電気信号を増幅.整形することで伝送距離を延ばす装置。（パブ：複数のポートを持つリピータで、受け取ったデータはすべてのポートへ送出する。）</li>
+          <li>ルータ：第3層でデータを2つ以上の異なるネットワーク間に中継する通信機器</li>
+        </ul>
+      </section>
+      <section>
+        <h3>問５</h3>
+      </section>
+      <section>
+        <p>MACアドレス(Media Access Control address)は、ネットワーク上の各機器を識別するために、原則的に世界中の機器に一意に割り当てられている番号です。イーサネットの場合、48ビットの符号であり、最初の24ビットがベンダーID(OUI)、次の8ビットが機種ID、最後の16ビットが製品のシリアルIDという構成になっています。</p>
+      </section>
+      <section>
+        <p>ベンダーIDとプロダクトIDはUSB機器をパソコンに接続した際に接続された機器を特定するために使用されます。 ベンダーIDは、各企業や会社毎にUSBインプリメンターズ・フォーラムから発行されます。 プロダクトIDは、ベンダーIDを持つ企業や会社が各製品や機種毎に重複しないよう割り振るコードです。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-5.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <p>前半24ビットがベンダーID、後半24ビットが機種名と製品のシリアルNoをあわせた固有製造番号ということ</p>
+          <p>答え．エ</p>
+        </ul>
+      </section>
+      <section>
+        <h3>問６</h3>
+      </section>
+      <section>
+        <p>IPアドレス：番地のようなもの。ネットワーク層のIPプロトコルを通信経路を確立するために用いられる。ネットワーク部とホスト部がある。</p>
+        <p>サブネットマスク：ネットワークアドレスを取り出すもの。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-6.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section>
+        <h3>問７</h3>
+      </section>
+      <section>
+        <p>グローバルIPアドレス：インターネットに接続する際に利用されるIPアドレスで、（インターネットに接続している）機器（PC等）の一台一台に、一意に割り振られる番号。</p>
+        <p>NAPT(IPマスカレード)は、グローバルIPアドレスとプライベートIPアドレスとを「1対n」で対応させる機能。IPアドレスとポートを使って通信を識別するため、1つのグローバルIPアドレスで複数のパソコンがインターネットに接続可能になります</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-7.jpg"">
+      </section>
+      <section> 
+        <ul style="list-style-type: katakana;">
+          <li>Dynamic Host Configuration Protocolの略。TCP/IPで、ネットワークに接続するノードへのIPアドレスの割り当てを自動的に行うプロトコル</li>
+          <li>〇</li>
+          <li>Point-to-Point Protocol over Ethernetの略。次ページ</li>
+          <li>パケットフィルタリング、通過するパケットのヘッダ情報を検査し、許可されたパケットのみをネットワークの内外へ通過させる機能です。主にファイアウォールやルータなどネットワークの境界に設置される機器に装備されています</li>
+        </ul>
+      </section>
+      <section>
+        <p>LANなどのローカルのネットワークではIPなどのプロトコルがEthernetの上で動作している。ここで他の地点にあるノード(マシン)へパケットを送信する場合に、Ethernetの代わりに使われるのがPPPで、さまざまなプロトコルを1つの回線を使って転送できるように考慮されており、ISDNや電話回線などの通信回線で利用されている。ADSLでもADSLモデムのインターフェイスはEthernetになっているが、そこを通過するプロトコルはPPPになっている。これは、ADSLモデムをアナログモデムやTAのように考え、そこにPPPを使った、相手先との通信を確立させるもの(PPP over Ethernet：PPPoEなどの方式がある)。</p>
+      </section>
+      <section>
+        <h3>問８</h3>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-8.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>DHCP(Dynamic Host Configuration Protocol)の説明</li>
+          <li>RPC(Remote Procedure Call)の役割</li>
+          <li>NAT(Network Address Translation)の説明</li>
+          <li>〇</li>
+        </ul>
+      </section>
+      <section>
+        <h3>問９</h3>
+      </section>
+      <section>
+        <p>TCP(Transmission Control Protocol)は、TCP/IPネットワークにおいて通信を行う2つのノード間にコネクションと呼ばれる論理的な通信路を確立し、送達管理や、伝送管理などの機能を提供するプロトコルです。OSI基本参照モデルでTCPが属するトランスポート層は、通信の信頼性を確保する機能のほかに、アプリケーション間の通信を実現するという機能があります。IPアドレスは、パケットを送信元ホストから宛先ホストに届けるための情報で、パケットを送り届けるアプリケーションの情報は含まれていません。このパケットの宛先となるアプリケーションを指定する情報がポート番号です。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-9.jpg"">
+      </section>
+      <section>
+        <p>宛先IPアドレス・ポート番号は、パケットを届けるのに必要で、送信元IPアドレス・ポート番号はパケットを受け取ったホストがパケットを返信する際に返信パケットに宛先としてセットするために必要となる</p>
+        <p>答え．イ</p>
+      </section>
+      <section>
+        <h3>問１０</h3>
+        <p>計算</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-10.jpg" style="height: 600px">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section>
+        <h3>問１１</h3>
+      </section>
+      <section>
+        <p>POP3(Post Office Protocol Version 3)は、ユーザがメールサーバから自身のメールをとりだす処理において使用されるメール受信用プロトコルです。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-11.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>CHAP(Challenge Handshake Authentication Protocol)やPAP(Password Authentication Protocol)の説明</li>
+          <li>SMTPの説明</li>
+          <li>〇</li>
+          <li>SMTPの説明</li>
+        </ul>
+      </section>
+      <section>
+        <h3>問１２</h3>
+      </section>
+      <section>
+        <p>MIME(Multipurpose Internet Mail Extension，マイム)は、ASCII文字しか使用できないSMTPを利用したメールで、日本語の2バイトコードや画像データを送信するための仕組みです。S/MIME(Secure MIME)は、これに暗号化とディジタル署名の機能を付け電子メールの機密性と完全性を高めたものです。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-12.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>Joint Photographic Experts Groupの略。ディジタルカメラで撮影したフルカラー静止画像などを圧縮するのに一般的な方式で、設定により非可逆圧縮方式と可逆方式が選択が可能です。</li>
+          <li>〇</li>
+          <li>Moving Picture Experts Groupの略。映像データの圧縮方式の一つで、MPEG1、MPEG2、MPEG4、MPEG7などの規格があります。</li>
+          <li>Simple Mail Transfer Protocolの略。インターネット環境で使われる電子メール転送プロトコルです。</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+
+</body>
+</html>
