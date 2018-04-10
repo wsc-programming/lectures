@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>WSC Lecture 20180411</h2>
+        <h4>by $TeraCode</h4>
+      </section>
+      <section>
+        <h3>基本情報技術者</h3>
+      </section>
+      <section>
+        <h3>問７</h3>
+      </section>
+      <section>
+        <p>グローバルIPアドレス：インターネットに接続する際に利用されるIPアドレスで、（インターネットに接続している）機器（PC等）の一台一台に、一意に割り振られる番号。</p>
+        <p>NAPT(IPマスカレード)は、グローバルIPアドレスとプライベートIPアドレスとを「1対n」で対応させる機能。IPアドレスとポートを使って通信を識別するため、1つのグローバルIPアドレスで複数のパソコンがインターネットに接続可能になります</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-7.jpg"">
+      </section>
+      <section> 
+        <ul style="list-style-type: katakana;">
+          <li>Dynamic Host Configuration Protocolの略。TCP/IPで、ネットワークに接続するノードへのIPアドレスの割り当てを自動的に行うプロトコル</li>
+          <li>〇</li>
+          <li>Point-to-Point Protocol over Ethernetの略。次ページ</li>
+          <li>パケットフィルタリング、通過するパケットのヘッダ情報を検査し、許可されたパケットのみをネットワークの内外へ通過させる機能です。主にファイアウォールやルータなどネットワークの境界に設置される機器に装備されています</li>
+        </ul>
+      </section>
+      <section>
+        <p>LANなどのローカルのネットワークではIPなどのプロトコルがEthernetの上で動作している。ここで他の地点にあるノード(マシン)へパケットを送信する場合に、Ethernetの代わりに使われるのがPPPで、さまざまなプロトコルを1つの回線を使って転送できるように考慮されており、ISDNや電話回線などの通信回線で利用されている。ADSLでもADSLモデムのインターフェイスはEthernetになっているが、そこを通過するプロトコルはPPPになっている。これは、ADSLモデムをアナログモデムやTAのように考え、そこにPPPを使った、相手先との通信を確立させるもの(PPP over Ethernet：PPPoEなどの方式がある)。</p>
+      </section>
+      <section>
+        <h3>問８</h3>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-8.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>DHCP(Dynamic Host Configuration Protocol)の説明</li>
+          <li>RPC(Remote Procedure Call)の役割</li>
+          <li>NAT(Network Address Translation)の説明</li>
+          <li>〇</li>
+        </ul>
+      </section>
+      <section>
+        <h3>問９</h3>
+      </section>
+      <section>
+        <p>TCP(Transmission Control Protocol)は、TCP/IPネットワークにおいて通信を行う2つのノード間にコネクションと呼ばれる論理的な通信路を確立し、送達管理や、伝送管理などの機能を提供するプロトコルです。OSI基本参照モデルでTCPが属するトランスポート層は、通信の信頼性を確保する機能のほかに、アプリケーション間の通信を実現するという機能があります。IPアドレスは、パケットを送信元ホストから宛先ホストに届けるための情報で、パケットを送り届けるアプリケーションの情報は含まれていません。このパケットの宛先となるアプリケーションを指定する情報がポート番号です。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-9.jpg"">
+      </section>
+      <section>
+        <p>宛先IPアドレス・ポート番号は、パケットを届けるのに必要で、送信元IPアドレス・ポート番号はパケットを受け取ったホストがパケットを返信する際に返信パケットに宛先としてセットするために必要となる</p>
+        <p>答え．イ</p>
+      </section>
+      <section>
+        <h3>問１０</h3>
+        <p>計算</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-10.jpg" style="height: 600px">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section>
+        <h3>問１１</h3>
+      </section>
+      <section>
+        <p>POP3(Post Office Protocol Version 3)は、ユーザがメールサーバから自身のメールをとりだす処理において使用されるメール受信用プロトコルです。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-11.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>CHAP(Challenge Handshake Authentication Protocol)やPAP(Password Authentication Protocol)の説明</li>
+          <li>SMTPの説明</li>
+          <li>〇</li>
+          <li>SMTPの説明</li>
+        </ul>
+      </section>
+      <section>
+        <h3>問１２</h3>
+      </section>
+      <section>
+        <p>MIME(Multipurpose Internet Mail Extension，マイム)は、ASCII文字しか使用できないSMTPを利用したメールで、日本語の2バイトコードや画像データを送信するための仕組みです。S/MIME(Secure MIME)は、これに暗号化とディジタル署名の機能を付け電子メールの機密性と完全性を高めたものです。</p>
+      </section>
+      <section>
+        <img src="img/20180404/3-2-12.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li>Joint Photographic Experts Groupの略。ディジタルカメラで撮影したフルカラー静止画像などを圧縮するのに一般的な方式で、設定により非可逆圧縮方式と可逆方式が選択が可能です。</li>
+          <li>〇</li>
+          <li>Moving Picture Experts Groupの略。映像データの圧縮方式の一つで、MPEG1、MPEG2、MPEG4、MPEG7などの規格があります。</li>
+          <li>Simple Mail Transfer Protocolの略。インターネット環境で使われる電子メール転送プロトコルです。</li>
+        </ul>
+      </section>
+      <section
+        <h3>問１</h3>
+      </section>
+      <section>
+        <p></p>
+      </section>
+      <section>
+        <img src="img/20180411/3-3-1.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li>〇</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section
+        <h3>問２</h3>
+      </section>
+      <section>
+        <p></p>
+      </section>
+      <section>
+        <img src="img/20180411/3-3-2.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li>〇</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section
+        <h3>問３</h3>
+      </section>
+      <section>
+        <p></p>
+      </section>
+      <section>
+        <img src="img/20180411/3-3-3.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li>〇</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section
+        <h3>問４</h3>
+      </section>
+      <section>
+        <p></p>
+      </section>
+      <section>
+        <img src="img/20180411/3-3-4.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li>〇</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section
+        <h3>問５</h3>
+      </section>
+      <section>
+        <p></p>
+      </section>
+      <section>
+        <img src="img/20180411/3-3-5.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li>〇</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section
+        <h3>問６</h3>
+      </section>
+      <section>
+        <p></p>
+      </section>
+      <section>
+        <img src="img/20180411/3-3-6.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li>〇</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section
+        <h3>問７</h3>
+      </section>
+      <section>
+        <p></p>
+      </section>
+      <section>
+        <img src="img/20180411/3-3-7.jpg"">
+      </section>
+      <section>
+        <ul style="list-style-type: katakana;">
+          <li></li>
+          <li>〇</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+
+</body>
+</html>
