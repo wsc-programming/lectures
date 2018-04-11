@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>WSC Lecture 20180411</h2>
+          <h4>by $TeraCode</h4>
+        </section>
+        <section>
+          <h3>基本情報技術者</h3>
+        </section>
+        <section>
+          <h3>第３章 その② ネットワーク</h3>
+          <p>先週の続き</p>
+        </section>
+        <section>
+          <h3>問７</h3>
+        </section>
+        <section>
+          <p>グローバルIPアドレス</p>
+          <small>インターネットに接続する際に利用されるIPアドレスで、（インターネットに接続している）機器（PC等）の一台一台に、一意に割り振られる番号。</small>
+          <p>NAPT(IPマスカレード)</p>
+          <small>グローバルIPアドレスとプライベートIPアドレスとを「1対n」で対応させる機能。IPアドレスとポートを使って通信を識別するため、1つのグローバルIPアドレスで複数のパソコンがインターネットに接続可能になります</small>
+        </section>
+        <section>
+          <img src="img/20180404/3-2-7.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>Dynamic Host Configuration Protocolの略。TCP/IPで、ネットワークに接続するノードへのIPアドレスの割り当てを自動的に行うプロトコル</li>
+            <li>〇</li>
+            <li>Point-to-Point Protocol over Ethernetの略。次ページ</li>
+            <li>パケットフィルタリング、通過するパケットのヘッダ情報を検査し、許可されたパケットのみをネットワークの内外へ通過させる機能です。主にファイアウォールやルータなどネットワークの境界に設置される機器に装備されています</li>
+          </ul>
+        </section>
+        <section>
+          <p>前提：LANなどのローカルのネットワークではIPなどのプロトコルがEthernetの上で動作している。</p>
+          <p>PPP (Point-to-point Protocol)？</p>
+          <small>他の地点にあるノード(マシン)へパケットを送信する場合に、Ethernetの代わりに使われ、さまざまなプロトコルを1つの回線を使って転送できるように考慮されており、ISDNや電話回線などの通信回線で利用されている。 ADSLでもADSLモデムのインターフェイスはEthernetになっているが、そこを通過するプロトコルはPPPになっている。これは、ADSLモデムをアナログモデムやTAのように考え、そこにPPPを使った、相手先との通信を確立させるもの(PPP over Ethernet：PPPoEなどの方式がある)。</small>
+        </section>
+        <section>
+          <h3>問８</h3>
+        </section>
+        <section>
+          <img src="img/20180404/3-2-8.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>DHCP(Dynamic Host Configuration Protocol)の説明</li>
+            <li>RPC(Remote Procedure Call)の役割</li>
+            <li>NAT(Network Address Translation)の説明</li>
+            <li>〇</li>
+          </ul>
+        </section>
+        <section>
+          <h3>問９</h3>
+        </section>
+        <section>
+          <p>TCP(Transmission Control Protocol)?</p>
+          <small>TCP/IPネットワークにおいて通信を行う2つのノード間にコネクションと呼ばれる論理的な通信路を確立し、送達管理や、伝送管理などの機能を提供するプロトコルです。OSI基本参照モデルでTCPが属するトランスポート層は、通信の信頼性を確保する機能のほかに、アプリケーション間の通信を実現するという機能があります。IPアドレスは、パケットを送信元ホストから宛先ホストに届けるための情報で、パケットを送り届けるアプリケーションの情報は含まれていません。このパケットの宛先となるアプリケーションを指定する情報がポート番号です。</small>
+        </section>
+        <section>
+          <img src="img/20180404/3-2-9.jpg"">
+        </section>
+        <section>
+          <p>宛先IPアドレス・ポート番号は、パケットを届けるのに必要で、送信元IPアドレス・ポート番号はパケットを受け取ったホストがパケットを返信する際に返信パケットに宛先としてセットするために必要となる</p>
+          <p>答え．イ</p>
+        </section>
+        <section>
+          <h3>問１０</h3>
+          <p>計算</p>
+        </section>
+        <section>
+          n          <img src="img/20180404/3-2-10.jpg" style="height: 600px">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li></li>
+            <li>〇 ポイント: 片道の伝送遅延時間は同じ</li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問１１</h3>
+        </section>
+        <section>
+          <p>POP3(Post Office Protocol Version 3)?</p>
+          <small>ユーザがメールサーバから自身のメールをとりだす処理において使用されるメール受信用プロトコルです。</small>
+        </section>
+        <section>
+          <img src="img/20180404/3-2-11.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>CHAP(Challenge Handshake Authentication Protocol)やPAP(Password Authentication Protocol)の説明</li>
+            <li>SMTPの説明</li>
+            <li>〇</li>
+            <li>SMTPの説明</li>
+          </ul>
+        </section>
+        <section>
+          <h3>問１２</h3>
+        </section>
+        <section>
+          <p>MIME(Multipurpose Internet Mail Extension，マイム)?</p>
+          <small>ASCII文字しか使用できないSMTPを利用したメールで、日本語の2バイトコードや画像データを送信するための仕組みです。S/MIME(Secure MIME)は、これに暗号化とディジタル署名の機能を付け電子メールの機密性と完全性を高めたものです。</small>
+        </section>
+        <section>
+          <img src="img/20180404/3-2-12.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>Joint Photographic Experts Groupの略。ディジタルカメラで撮影したフルカラー静止画像などを圧縮するのに一般的な方式で、設定により非可逆圧縮方式と可逆方式が選択が可能です。</li>
+            <li>〇</li>
+            <li>Moving Picture Experts Groupの略。映像データの圧縮方式の一つで、MPEG1、MPEG2、MPEG4、MPEG7などの規格があります。</li>
+            <li>Simple Mail Transfer Protocolの略。インターネット環境で使われる電子メール転送プロトコルです。</li>
+          </ul>
+        </section>
+        <section>
+          <h3>第３章 その③ セキュリティ</h3>
+          <p>目的：機密性、完全性、可用性</p>
+        </section>
+        <section>
+          <ul>
+            <li>物理的脅威</li>
+            <br />
+            <li>人的脅威</li>
+            <small>クラッキング /</small>
+            <small>ソーシャルエンジニアリング /</small>
+            <small>誤謬</small>
+            <ul>
+        </section>
+        <section>
+          <h3>マイルウェア</h3>
+          <p>「悪意を持った」ソフトウェアの総称</p>
+        </section>
+        <section>
+          <ul>
+            <li>コンピュータウイルス</li>
+            <small>自己伝染機能 /潜伏機能 /発病機能</small>
+            <li>ワーム</li>
+            <small>自分自身を複製する</small>
+            <li>ボット（BOT）</li>
+            <small>遠隔操作型ウイルス</small>
+            <ul>
+        </section>
+        <section>
+          <ul>
+            <li>トロイの木馬</li>
+            <small>正規のプログラムに見せかけてコンピュータに入り込む</small>
+            <li>スパイウェア</li>
+            <small>個人情報などのデータを特定のサイトに勝手送信</small>
+            <li>ランサムウェア</li>
+            <small>システムやデータを勝手にロックしたり暗号化する</small>
+            <ul>
+        </section>
+        <section>
+          <h3>問１</h3>
+        </section>
+        <section>
+          <p>マイルウェアって？</p>
+        </section>
+        <section>
+          <img src="img/20180411/3-3-1.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>Ransomware</li>
+            <li>Computing Virus</li>
+            <li>Trojan horse</li>
+            <li>〇</li>
+          </ul>
+        </section>
+        <section>
+          <h3>マイルウェアが行う攻撃手法</h3>
+        </section>
+        <section>
+          <ul>
+            <li>キーロガー</li>
+            <small>キーボードのタイピング情報を記録するソフトウェア</small>
+            <li>バックドア</li>
+            <small>不正アクセス用にシステムに設けた裏口（別のシステムへの攻撃の踏み台にしている）</small>
+            <li>クロスサイトスクリプティング</li>
+            <small>書き込み欄（フォーム）のあるアプリケーションの脆弱性を突き、スクリプ（命令）を埋め込むことで、偽ページを表示させる</small>
+            <li>ゼロディ攻撃</li>
+            <small>セキュリティホールが発見されてから、ベンダが修正プログラム（パッチ）を提供するまでを狙う</small>
+            <ul>
+        </section>
+        <section>
+          <ul>
+            <li>フィッシング / ワンクリック詐欺</li>
+            <small>金融機関などのWebサイトを模して、個人情報を取得する / URLへのクリックから架空請求するなど</small>
+            <li>SQLインジェクション</li>
+            <small>データベースに悪意のある問い合わせや操作を行うSQL文を入力し、データ改ざん、不正取得する</small>
+            <li>DoS(Denial of Services)攻撃</li>
+            <small>大量のデータを送り付け、システムダウンなどを狙った攻撃</small>
+            <li>DDoS(Distributed DoS: 分散型サービス妨害)攻撃</li>
+            <small>ウィルスなどにより、第三者のマシンを多数踏み台にして、標的に大量のデータを送り付る攻撃</small>
+            <ul>
+        </section>
+        <section>
+          <h3>問２</h3>
+        </section>
+        <section>
+          <p>Session Hijack？</p>
+          <h3>------------------------</h3>
+          <p>Directory Traversal?</p>
+        </section>
+        <section>
+          <img src="img/20180411/3-3-2.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>SQL Injection</li>
+            <li>〇</li>
+            <li>Cross-site Scripting</li>
+            <li>Session Hijack</li>
+          </ul>
+        </section>
+        <section
+          <h3>問３</h3>
+        </section>
+        <section>
+          <h3>暗号技術</h3>
+          <p>共通鍵暗号方式と公開鍵暗号方式</p>
+        </section>
+        <section>
+          <p>共通鍵暗号方式? AES(Advanced Encryption Standard)?</p>
+          <small class="fragment">＞共通鍵暗号とは、暗号用と復号用に同じ鍵を用いる方式。鍵つきの扉や机に用いる鍵と同じ。ファイル暗号などによく使われる方式で、処理が早いのが特徴</small>
+          <h3>------------------------</h3>
+          <p>公開鍵暗号方式? RSA(Rivest-Shamir-Adleman)?</p>
+          <small class="fragment">＞公開鍵暗号とは、暗号用の鍵と復号用の鍵が異なる方式です。暗号に使用するのは公開鍵で、復号に使用するのは秘密鍵</small>
+        </section>
+        <section>
+          <img src="img/20180411/3-3-3.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li></li>
+            <li>〇</li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問４</h3>
+        </section>
+        <section>
+          <p>デジタル署名?</p>
+          <small class="fragment">データの改ざんがないことを確認するため、公開鍵方式の鍵を逆に使う</small>
+        </section>
+        <section>
+          <img src="img/20180411/3-3-4.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li></li>
+            <li>〇</li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問５</h3>
+        </section>
+        <section>
+          <p>Biometrics?</p>
+          <small class="fragment">バイオメトリクス：生体認証</small>
+        </section>
+        <section>
+          <ul>
+            <li>身体的特徴</li>
+            <small>指紋、虹彩(眼球の角膜と水晶体の間にある輪状の薄い膜) etc..</small>
+            <li>行動的特徴</li>
+            <small>筆圧や書き順、ペンのスピード etc..</small>
+          </ul>
+        </section>
+        <section>
+          <img src="img/20180411/3-3-5.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li>〇</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問６</h3>
+        </section>
+        <section>
+          <p>PKI (Public Key Infrastructure: 公開鍵基盤)?</p>
+          <small class="fragment">公開鍵暗号方式を利用し，インターネット上で安全に情報をやり取りするための基盤</small>
+          <small class="fragment">公開鍵暗号ベースのシステム全体を指す。PKIには、認証局(CA)、登録機関(RA)、鍵管理などの機能が含まれている。PKIを活用することで、デジタル署名による否認防止や暗号化による通信が実現する</small>
+        </section>
+        <section>
+          <p>CA (Certificate Authority: 認証局)?</p>
+          <small class="fragment">インターネット上で、個人や法人の信頼性、正当性を保証するための電子証明書を発行する第三者機関</small>
+          <small class="fragment">例： クレジットカードで電子決済を行う場合は、通常クレジットカード会社が認証局となる</small>
+        </section>
+        <section>
+          <img src="img/20180411/3-3-6.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li></li>
+            <li>〇</li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問７</h3>
+        </section>
+        <section>
+          <p>情報セキュリティの完全性 / 機密性 / 可用性?</p>
+          <small class="fragment">完全性：資産が故意・過失・災害などで改ざんされたり、破壊されたりしないようにすること</small>
+          <small class="fragment">機密性：資産へのアクセスを許されていないものが、その資産を見たり、触ったりできないようにすること</small>
+          <small class="fragment">可用性：許可されたものが許可された条件内で資産を使用したいときに、その資産を使用できるようにすること</small>
+        </section>
+        <section>
+          <img src="img/20180411/3-3-7.jpg">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>〇</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+     // More info https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       transition: 'slide', // none/fade/slide/convex/concave/zoom
+       // More info https://github.com/hakimel/reveal.js#dependencies
+       dependencies: [
+         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'plugin/zoom-js/zoom.js', async: true },
+         { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
+    </script>
+  </body>
+</html>
