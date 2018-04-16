@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>WSC Lecture 20180418</h2>
+          <h4>by $TeraCode</h4>
+        </section>
+        <section>
+          <h3>基本情報技術者</h3>
+        </section>
+        <section>
+          <h3>第３章 その③ セキュリティ</h3>
+          <p>先週の続き</p>
+        </section>
+        <section>
+          <h3> 情報セキュリティーの管理</h3>
+          <p>守るべき情報資産を価値のあるものに維持する</p>
+          <h4 class="fragment">情報システムの停止による損失、顧客情報の漏洩による企業や組織のブランドイメージの失墜など、情報セキュリティ上のリスクは、企業や組織に大きな被害や影響をもたらします。</h4>
+        </section>
+        <section>
+　        <p>情報資産の分類</p>
+          <ul>
+            <li>情報</li>
+            <small>文書やマニュアル</small>
+            <li>ソフトウェア資産</li>
+            <small>ソフトウェアやアプリケーションソフト、開発ツール</small>
+            <li>サービス</li>
+            <small>情報、通信サービス</small>
+            <li>人的資産</li>
+            <small>人、その技能、資格や経験</small>
+            <li>無形資産</li>
+            <small>企業の社会的 信用やブランド力、評判やイメージ</small>
+            <ul>
+        </section>
+        <section>
+          <h3>リスク分析と評価の手順</h3>
+          <p class="fragment">・リスク＝予想損失額×発生確率</p>
+        </section>
+        <section>
+          <p>リスクマネジメント</p>
+          <ul>
+            <li>リスクの特定</li>
+            <small class="fragment highlight-red">↓</small>
+            <li>リスク分析と評価</li>
+            <small class="fragment highlight-red">↓</small>
+            <li>リスク対応</li>
+            <ul>
+        </section>
+        <section id="transitions">
+  				<a href="?transition=convex#/transitions">
+            <p>リスクマネジメント</p>
+          </a>
+          <ul>
+            <li>オペレーショナルリスク</li>
+            <small>通常業務においての損失</small>
+            <li>サプライチェーンリスク</li>
+            <small>物品の調達、製品の流通においての損失</small>
+            <li>外部サービス利用のリスク</li>
+            <small>業務委託先のシステム障害や業務不履行、クラウドサービスでの損失</small>
+            <li>SNSによる情報発信のリスク</li>
+            <small>SNS利用による、情報や宣伝が批判、プライバシーの漏洩による損失</small>
+            <ul>
+        </section>
+        <section>
+          <h3>問８</h3>
+        </section>
+        <section>
+          <p></p>
+        </section>
+        <section>
+          <img src="img/20180418/3-3-8.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>Ransomware</li>
+            <li>Computing Virus</li>
+            <li>Trojan horse</li>
+            <li>〇</li>
+          </ul>
+        </section>
+        <section>
+          <h3>マルウェアが行う攻撃手法</h3>
+        </section>
+        <section>
+          <ul>
+            <li>キーロガー</li>
+            <small>キーボードのタイピング情報を記録するソフトウェア</small>
+            <li>バックドア</li>
+            <small>不正アクセス用にシステムに設けた裏口（別のシステムへの攻撃の踏み台にしている）</small>
+            <li>クロスサイトスクリプティング</li>
+            <small>書き込み欄（フォーム）のあるアプリケーションの脆弱性を突き、スクリプト（命令）を埋め込むことで、偽ページを表示させる</small>
+            <li>ゼロディ攻撃</li>
+            <small>セキュリティホールが発見されてから、ベンダが修正プログラム（パッチ）を提供するまでを狙う</small>
+            <ul>
+        </section>
+        <section>
+          <ul>
+            <li>フィッシング / ワンクリック詐欺</li>
+            <small>金融機関などのWebサイトを模して、個人情報を取得する / URLへのクリックから架空請求するなど</small>
+            <li>SQLインジェクション</li>
+            <small>データベースに悪意のある問い合わせや操作を行うSQL文を入力し、データ改ざん、不正取得する</small>
+            <li>DoS(Denial of Services)攻撃</li>
+            <small>大量のデータを送り付け、システムダウンなどを狙った攻撃</small>
+            <li>DDoS(Distributed DoS: 分散型サービス妨害)攻撃</li>
+            <small>ウィルスなどにより、第三者のマシンを多数踏み台にして、標的に大量のデータを送り付る攻撃</small>
+            <ul>
+        </section>
+        <section>
+          <h3>問２</h3>
+        </section>
+        <section>
+          <p>Session Hijack？</p>
+          <h3>------------------------</h3>
+          <p>Directory Traversal?</p>
+        </section>
+        <section>
+          <img src="img/20180418/3-3-9.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>SQL Injection</li>
+            <li>〇</li>
+            <li>Cross-site Scripting</li>
+            <li>Session Hijack</li>
+          </ul>
+        </section>
+        <section
+          <h3>問３</h3>
+        </section>
+        <section>
+          <h3>暗号技術</h3>
+          <p>共通鍵暗号方式と公開鍵暗号方式</p>
+        </section>
+        <section>
+          <p>共通鍵暗号方式? AES(Advanced Encryption Standard)?</p>
+          <small class="fragment">＞共通鍵暗号とは、暗号用と復号用に同じ鍵を用いる方式。鍵つきの扉や机に用いる鍵と同じ。ファイル暗号などによく使われる方式で、処理が早いのが特徴</small>
+          <h3>------------------------</h3>
+          <p>公開鍵暗号方式? RSA(Rivest-Shamir-Adleman)?</p>
+          <small class="fragment">＞公開鍵暗号とは、暗号用の鍵と復号用の鍵が異なる方式です。暗号に使用するのは公開鍵で、復号に使用するのは秘密鍵</small>
+        </section>
+        <section>
+          <img src="img/20180418/3-3-10.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li></li>
+            <li>〇</li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問４</h3>
+        </section>
+        <section>
+          <p>デジタル署名?</p>
+          <small class="fragment">データの改ざんがないことを確認するため、公開鍵方式の鍵を逆に使う</small>
+        </section>
+        <section>
+          <img src="img/20180418/3-3-11.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li></li>
+            <li>〇</li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問５</h3>
+        </section>
+        <section>
+          <p>Biometrics?</p>
+          <small class="fragment">バイオメトリクス：生体認証</small>
+        </section>
+        <section>
+          <ul>
+            <li>身体的特徴</li>
+            <small>指紋、虹彩(眼球の角膜と水晶体の間にある輪状の薄い膜) etc..</small>
+            <li>行動的特徴</li>
+            <small>筆圧や書き順、ペンのスピード etc..</small>
+          </ul>
+        </section>
+        <section>
+          <img src="img/20180418/3-3-12.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li>〇</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問６</h3>
+        </section>
+        <section>
+          <p>PKI (Public Key Infrastructure: 公開鍵基盤)?</p>
+          <small class="fragment">公開鍵暗号方式を利用し，インターネット上で安全に情報をやり取りするための基盤</small>
+          <small class="fragment">公開鍵暗号ベースのシステム全体を指す。PKIには、認証局(CA)、登録機関(RA)、鍵管理などの機能が含まれている。PKIを活用することで、デジタル署名による否認防止や暗号化による通信が実現する</small>
+        </section>
+        <section>
+          <p>CA (Certificate Authority: 認証局)?</p>
+          <small class="fragment">インターネット上で、個人や法人の信頼性、正当性を保証するための電子証明書を発行する第三者機関</small>
+          <small class="fragment">例： クレジットカードで電子決済を行う場合は、通常クレジットカード会社が認証局となる</small>
+        </section>
+        <section>
+          <img src="img/20180418/3-3-6.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li></li>
+            <li>〇</li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <h3>問７</h3>
+        </section>
+        <section>
+          <p>情報セキュリティの完全性 / 機密性 / 可用性?</p>
+          <small class="fragment">完全性：資産が故意・過失・災害などで改ざんされたり、破壊されたりしないようにすること</small>
+          <small class="fragment">機密性：資産へのアクセスを許されていないものが、その資産を見たり、触ったりできないようにすること</small>
+          <small class="fragment">可用性：許可されたものが許可された条件内で資産を使用したいときに、その資産を使用できるようにすること</small>
+        </section>
+        <section>
+          <img src="img/20180418/3-3-7.jpg">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>〇</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <img src="img/20180418/4-1.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li>〇</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <img src="img/20180418/4-2.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li>〇</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+        <section>
+          <img src="img/20180418/4-3.jpg"">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li></li>
+            <li>〇</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+     // More info https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       transition: 'slide', // none/fade/slide/convex/concave/zoom
+       // More info https://github.com/hakimel/reveal.js#dependencies
+       dependencies: [
+         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'plugin/zoom-js/zoom.js', async: true },
+         { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
+    </script>
+  </body>
+</html>
