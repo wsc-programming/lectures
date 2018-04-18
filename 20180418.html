@@ -32,7 +32,7 @@
           <h3>基本情報技術者</h3>
         </section>
         <section>
-          <h3>第３章 その③ セキュリティ</h3>
+n          <h3>第３章 その③ セキュリティ</h3>
           <p>先週の続き</p>
         </section>
         <section>
@@ -71,7 +71,7 @@
         </section>
         <section id="transitions">
   				<a href="?transition=convex#/transitions">
-            <p>リスクマネジメント</p>
+            <p>リスクの種類</p>
           </a>
           <ul>
             <li>オペレーショナルリスク</li>
@@ -88,212 +88,127 @@
           <h3>問８</h3>
         </section>
         <section>
-          <p></p>
+          <p>リスクアセスメント？</p>
+          <small class="fragment">物事の総体としての量・価値の計算的評価</small>
         </section>
         <section>
           <img src="img/20180418/3-3-8.jpg"">
         </section>
         <section>
-          <ul style="list-style-type: katakana;">
-            <li>Ransomware</li>
-            <li>Computing Virus</li>
-            <li>Trojan horse</li>
-            <li>〇</li>
-          </ul>
+          <p>答え：イ（リスク特定→リスク分析→リスク評価）</p>
         </section>
         <section>
-          <h3>マルウェアが行う攻撃手法</h3>
+          <h3>情報セキュリティマネジメント</h3>
+          <p>ISMS</p>
+          <small class="fragment">Information Security Mangement Systems</small>
         </section>
         <section>
+          <p>ISMS認証と実施手順</p>
           <ul>
-            <li>キーロガー</li>
-            <small>キーボードのタイピング情報を記録するソフトウェア</small>
-            <li>バックドア</li>
-            <small>不正アクセス用にシステムに設けた裏口（別のシステムへの攻撃の踏み台にしている）</small>
-            <li>クロスサイトスクリプティング</li>
-            <small>書き込み欄（フォーム）のあるアプリケーションの脆弱性を突き、スクリプト（命令）を埋め込むことで、偽ページを表示させる</small>
-            <li>ゼロディ攻撃</li>
-            <small>セキュリティホールが発見されてから、ベンダが修正プログラム（パッチ）を提供するまでを狙う</small>
+            <li>Plan</li>
+            <small>情報セキュリティ対策の具体的計画・目標を策定する</small>
+            <li>Do</li>
+            <small>計画に基づいて対策の導入・運用を行う</small>
+            <li>Check</li>
+            <small>実施した結果の監視・見直しを行う</small>
+            <li>Action</li>
+            <small>経営人による改善・処置を行う</small>
             <ul>
         </section>
         <section>
-          <ul>
-            <li>フィッシング / ワンクリック詐欺</li>
-            <small>金融機関などのWebサイトを模して、個人情報を取得する / URLへのクリックから架空請求するなど</small>
-            <li>SQLインジェクション</li>
-            <small>データベースに悪意のある問い合わせや操作を行うSQL文を入力し、データ改ざん、不正取得する</small>
-            <li>DoS(Denial of Services)攻撃</li>
-            <small>大量のデータを送り付け、システムダウンなどを狙った攻撃</small>
-            <li>DDoS(Distributed DoS: 分散型サービス妨害)攻撃</li>
-            <small>ウィルスなどにより、第三者のマシンを多数踏み台にして、標的に大量のデータを送り付る攻撃</small>
-            <ul>
+          <p>ISMS適合評価制度</p>
+          <p>国際標準：ISO/IEC15408(コモンクライテリア)</p>
+          <p>日本標準：JIS Q 27001</p>
+          <small>英国規格のBS7799を基に策定された情報セキュリティ管理実施基準の国際規格</small>
+          <small class="fragment">BS規格？</small>
+          <small class="fragment">BSI（英国規格協会）によって規定される、企業・団体向けの情報システムセキュリティ管理のガイドラインのこと</small>
         </section>
         <section>
-          <h3>問２</h3>
-        </section>
-        <section>
-          <p>Session Hijack？</p>
-          <h3>------------------------</h3>
-          <p>Directory Traversal?</p>
+          <h3>問９</h3>
         </section>
         <section>
           <img src="img/20180418/3-3-9.jpg"">
         </section>
         <section>
-          <ul style="list-style-type: katakana;">
-            <li>SQL Injection</li>
-            <li>〇</li>
-            <li>Cross-site Scripting</li>
-            <li>Session Hijack</li>
+          <p>答え：ウ（point：適合性、JIS）</p>
+        </section>
+        <section>
+          <h3>問１０</h3>
+        </section>
+        <section>
+          <p>脆弱性の検査方法</p>
+        </section>
+        <section>
+          <h2>動的テスト</h2>
+          <ul>
+            <li>ペネトレーションテスト (Penetration Testing)</li>
+            <small>(The action or process of making a way through or into something.)</small>
+            <small class="fragment">ネットワークに接続されているコンピュータシステムに対し、実際に既知の技術を用いて侵入を試みることで、システムに脆弱性がないかどうかテストする手法のこと</small>
           </ul>
         </section>
-        <section
-          <h3>問３</h3>
+        <section>
+          <h2>静的テスト</h2>
+          <ul>
+            <li>ソフトウェアインスペクション (Software inspection) </li>
+            <small>ソフトウェア開発プロジェクトで作成された成果物（仕様書やプログラムなど）を、実際に動作させることなく人間の目で見て検証する</small>
+            <li>ウォークスルー（Walk through) </li>
+            <small>プログラムだけでなく、仕様書や設計書といったドキュメントに対するチェック</small>
+          </ul>
         </section>
         <section>
-          <h3>暗号技術</h3>
-          <p>共通鍵暗号方式と公開鍵暗号方式</p>
-        </section>
-        <section>
-          <p>共通鍵暗号方式? AES(Advanced Encryption Standard)?</p>
-          <small class="fragment">＞共通鍵暗号とは、暗号用と復号用に同じ鍵を用いる方式。鍵つきの扉や机に用いる鍵と同じ。ファイル暗号などによく使われる方式で、処理が早いのが特徴</small>
-          <h3>------------------------</h3>
-          <p>公開鍵暗号方式? RSA(Rivest-Shamir-Adleman)?</p>
-          <small class="fragment">＞公開鍵暗号とは、暗号用の鍵と復号用の鍵が異なる方式です。暗号に使用するのは公開鍵で、復号に使用するのは秘密鍵</small>
+          <h2>必要不可欠なテスト</h2>
+          <ul>
+            <li>リグレッションテスト（Regression Test) </li>
+            <small>コンピュータプログラムに手を加えたことによる影響を確認するテスト操作のこと</small>
+          </ul>
         </section>
         <section>
           <img src="img/20180418/3-3-10.jpg"">
         </section>
         <section>
-          <ul style="list-style-type: katakana;">
-            <li></li>
-            <li></li>
-            <li>〇</li>
-            <li></li>
+          <p>答え：ウ（point: 動的テスト）</p>
+        </section>
+        <section>
+          <h3>問１１</h3>
+        </section>
+        <section>
+          <p>ビヘイビア法？</p>
+          <small class="fragment">Behavior Method</small>
+          <ul>
+            <li class="fragment">仮想的な実行環境を用意してプログラムを実行し、異常な行動を起こさないか調べる方式</li>
+            <li class="fragment">実際の環境で実行されているプログラムを監視して異常な行動が観測されたら即座に実行を打ち切る方式</li>
           </ul>
-        </section>
-        <section>
-          <h3>問４</h3>
-        </section>
-        <section>
-          <p>デジタル署名?</p>
-          <small class="fragment">データの改ざんがないことを確認するため、公開鍵方式の鍵を逆に使う</small>
         </section>
         <section>
           <img src="img/20180418/3-3-11.jpg"">
         </section>
         <section>
-          <ul style="list-style-type: katakana;">
-            <li></li>
-            <li></li>
-            <li>〇</li>
-            <li></li>
-          </ul>
+          <p>答え：エ（point: 仮想環境　影響なし)</p>
         </section>
         <section>
-          <h3>問５</h3>
+          <h3>問１２</h3>
         </section>
         <section>
-          <p>Biometrics?</p>
-          <small class="fragment">バイオメトリクス：生体認証</small>
+          <p>アプリケーションセキュリティ</p>
+          <p>(Appliication Security)</p>
         </section>
         <section>
           <ul>
-            <li>身体的特徴</li>
-            <small>指紋、虹彩(眼球の角膜と水晶体の間にある輪状の薄い膜) etc..</small>
-            <li>行動的特徴</li>
-            <small>筆圧や書き順、ペンのスピード etc..</small>
+            <li>WAF (Web Application Firewall)</li>
+            <small>ファイアーウォールの中でも、Webアプリケーションのやり取りを把握・管理することによって不正侵入を防御することのできるファイアウォールのこと</small>
+            <li>セキュアプログラム</li>
+            <small>そもそも脆弱性を作らないことと、予防として準備しておくこと</small>
+            <small class="fragment">シンプル設計／拒否ベースでのアクセス／etc..</small>
+            <li>脆弱性低減技術</li>
+            <small>様々な検査を行うこと</small>
           </ul>
         </section>
         <section>
           <img src="img/20180418/3-3-12.jpg"">
         </section>
         <section>
-          <ul style="list-style-type: katakana;">
-            <li></li>
-            <li>〇</li>
-            <li></li>
-            <li></li>
-          </ul>
+          <p>答え：ア（point: Firewall)</p>
         </section>
-        <section>
-          <h3>問６</h3>
-        </section>
-        <section>
-          <p>PKI (Public Key Infrastructure: 公開鍵基盤)?</p>
-          <small class="fragment">公開鍵暗号方式を利用し，インターネット上で安全に情報をやり取りするための基盤</small>
-          <small class="fragment">公開鍵暗号ベースのシステム全体を指す。PKIには、認証局(CA)、登録機関(RA)、鍵管理などの機能が含まれている。PKIを活用することで、デジタル署名による否認防止や暗号化による通信が実現する</small>
-        </section>
-        <section>
-          <p>CA (Certificate Authority: 認証局)?</p>
-          <small class="fragment">インターネット上で、個人や法人の信頼性、正当性を保証するための電子証明書を発行する第三者機関</small>
-          <small class="fragment">例： クレジットカードで電子決済を行う場合は、通常クレジットカード会社が認証局となる</small>
-        </section>
-        <section>
-          <img src="img/20180418/3-3-6.jpg"">
-        </section>
-        <section>
-          <ul style="list-style-type: katakana;">
-            <li></li>
-            <li></li>
-            <li>〇</li>
-            <li></li>
-          </ul>
-        </section>
-        <section>
-          <h3>問７</h3>
-        </section>
-        <section>
-          <p>情報セキュリティの完全性 / 機密性 / 可用性?</p>
-          <small class="fragment">完全性：資産が故意・過失・災害などで改ざんされたり、破壊されたりしないようにすること</small>
-          <small class="fragment">機密性：資産へのアクセスを許されていないものが、その資産を見たり、触ったりできないようにすること</small>
-          <small class="fragment">可用性：許可されたものが許可された条件内で資産を使用したいときに、その資産を使用できるようにすること</small>
-        </section>
-        <section>
-          <img src="img/20180418/3-3-7.jpg">
-        </section>
-        <section>
-          <ul style="list-style-type: katakana;">
-            <li>〇</li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </section>
-        <section>
-          <img src="img/20180418/4-1.jpg"">
-        </section>
-        <section>
-          <ul style="list-style-type: katakana;">
-            <li></li>
-            <li>〇</li>
-            <li></li>
-            <li></li>
-          </ul>
-        </section>
-        <section>
-          <img src="img/20180418/4-2.jpg"">
-        </section>
-        <section>
-          <ul style="list-style-type: katakana;">
-            <li></li>
-            <li>〇</li>
-            <li></li>
-            <li></li>
-          </ul>
-        </section>
-        <section>
-          <img src="img/20180418/4-3.jpg"">
-        </section>
-        <section>
-          <ul style="list-style-type: katakana;">
-            <li></li>
-            <li>〇</li>
-            <li></li>
-            <li></li>
-          </ul>
-        </section>
-
       </div>
     </div>
     <script src="lib/js/head.min.js"></script>
