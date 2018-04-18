@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>問１</h2>
+          <p>開発プロセス</p>
+        </section>
+        <section>
+          <img src="img/4/4-1-1.jpg" height="620px">
+        </section>
+        <section>
+          <section>
+            <p>システム要件定義：ユーザの要求を明確化。</p>
+            <p>システム方式設計：システム要件を振り分ける。必要なシステム構成を決める。</p>
+          </section>
+          <section>
+            <p>ソフトウェア要件定義：構築するシステムのソフトウェアについて要件定義を確立する。</p>
+            <p>ソフトウェア方式設計：内部設計、機能単位のコンポーネントに分割、それらをつなぐインターフェースの仕様、DBの最上位レベルの仕様を設計する。個々のコンポーネントが完成したときにソフトウェア結合テストの仕様を決める。</p>
+          </section>
+          <section>
+            <p>ソフトウェア詳細設計：前工程で分割したものについて、詳細を設計する。ソフトウェアユニット（クラス、モジュール）のレベルに詳細化、DBの詳細内容、結合テストの仕様書も作成する。</p>
+            <p>ソフトウェア構築：コーディング、完成したユニットはテストデータを用いてユニットテスト（単体テスト）を行う。</p>
+          </section>
+          <section>
+            <p>テストおよび移行：完成したユニットは機能単位のソフトウェアに結合し、さらにテスト仕様に基づき、結合テストを行う。そして最後にソフトウェア結合し、システムを完成させる。ここでもテスト（システムテスト）を行う。完成後は移行計画に基づき、旧システムから新システムへの移行作業を行う。</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-1.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>システム要件定義</li>
+              <li>〇</li>
+              <li>ソフトウェア詳細設計</li>
+              <li>ソフトウェア要件定義</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>問２</h2>
+          <p>状態遷移図の説明</p>
+        </section>
+        <section>
+          <section>
+          <p>設計で用いる図式手法はさまざまある。その中に状態遷移図がある。</p>
+          <p>状態遷移図とは、情報や状態について時間的な移り変わりを図式化する手法です。</p>
+          </section>
+          <section>
+            <img src="img/4/4-2-1.jpg" height="600px">
+          </section>
+          <section>
+            <P>状態遷移図による流れを整理するため、状態遷移表を用いることもある。</P>
+            <img src="img/4/4-2-2.jpg" height="300px">
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-2.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>プログラム構造図：モジュール構成で開発を進めていく。</li>
+              <li>〇</li>
+              <li>システム設計図：機能を入力、処理、出力に分け、階層的に表現する。</li>
+              <li>DFD(Data Flow Diagram)↓</li>
+            </ul>
+          </section>
+          <section>
+            <p>業務内容を、業務を構成する機能とデータの流れに着目して、モデル化したもの。</p>
+            <img src="img/4/4-2-3.jpg" height="500px">
+          </section>
+        </section>
+        <section>
+          <h2>問３</h2>
+          <p>UMLで用いる図</p>
+        </section>
+        <section>
+          <section>
+            <p>UML(Unified Modeling Language: 統一モデリング言語)はOMGによって統一表記法としてまとめられたもの。</p>
+          </section>
+          <section>
+            <p>アクティビティ図：対象システム全体の処理内容とその流れを表す。</p>
+            <small>まず朝起きて顔を洗います。健康ならば新聞を読みながら朝食を食べ、歯を磨き、そのあと服を着替えて出社します。もし体調が悪ければ｢病気である｣と会社に連絡して処理終了です。</small>
+            <img src="img/4/4-3-1.gif">
+          </section>
+          <section>
+            <p>ユースケース図：システムとその利用者とのやりとりを整理し、利用者の視点でシステムの機能を表す。</p>
+            <small>ユーザ（受験者）は「受験申し込み」、「受験料振込み」、「テストを受ける」という処理を行っています。</small>
+            <img src="img/4/4-3-2.gif">
+          </section>
+          <section>
+            <p>クラス図：システムの構成要素となるクラスの型や属性、クラス間関係など、そのシステムの概念を表現。</p>
+          </section>
+          <section>
+            <p>オブジェクト図：概念であるクラスを具体化したインスタンス同士のつながりを表現。</p>
+            <img src="img/4/4-3-4.gif">
+          </section>
+          <section>
+            <p>シーケンス図：オブジェクトの間に生じるメッセージのやりとりを表現。</p>
+            <img src="img/4/4-3-5.gif">
+          </section>
+          <section>
+            <p>このほかにもいろいろとあるので出てきたらその都度覚えてください。</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-3.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>アクティビティ図：対象システム全体の処理内容とその流れを表す。</li>
+              <li>コンポーネント図はクラスをまとめて1つの部品としたコンポーネントのつながりを表す。↓</li>
+              <li>〇</li>
+              <li>状態遷移図は状態が変化するシステムの動作を記述するために用いる。UML2.0に含まれる図ではない。</li>
+            </ul>
+          </section>
+          <section>
+            <p>コンポーネント図：オブジェクトの間に生じるメッセージのやりとりを表現。</p>
+            <img src="img/4/4-3-5.gif">
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+     // More info https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       transition: 'slide', // none/fade/slide/convex/concave/zoom
+       // More info https://github.com/hakimel/reveal.js#dependencies
+       dependencies: [
+         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'plugin/zoom-js/zoom.js', async: true },
+         { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
+    </script>
+  </body>
+</html>
