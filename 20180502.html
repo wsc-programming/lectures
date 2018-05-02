@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>問１１</h3>
+          <p>スタブの役割</p>
+        </section>
+        <section>
+          <h4>結合テストと適格性確認テスト</h4>
+          <img src="img/4/4-11-1.jpg" height="600px">
+        </section>
+        <section>
+          <section>
+            <h4>ソフトウェア結合テストの方法</h4>
+          </section>
+          <section>
+            <p>増加テスト：テスト済みモジュール群に、モジュールを順次結合させながら行うテスト。モジュールが徐々に多くなるから増加テスト。</p>
+          </section>
+          <section>
+            <p>トップダウンテスト：上位から下位モジュールへの順に結合しながら行うテスト方法。未完成の下位モジュールの動作をシミュレートするスタブを使う。</p>
+            <p>ボトムアップテスト：単体テストが終わった下位モジュールから上位モジュールへの順で結合しながらテストする方法。未完成の上位モジュールの代わりにドライバを使う。</p>
+          </section>
+          <section>
+            <img src="img/4/4-11-2.jpg">
+          </section>
+          <section>
+            <p>非増加テスト：構成するモジュールを一度に結合してテストする方法。</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-11.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>スナップショットダンプ：メモリ上などに展開されているコンピュータの実行状態を丸ごと写しとって保存するダンプ(dump)の一種で、特定の命令を実行した瞬間に保存されるものをスナップショットダンプという。</li>
+              <li>〇</li>
+              <li>インスペクタ：ソフトウェアの機能や種類の一つで、指定した対象の現在の状態や内部構造を示す情報を一覧表示してくれるもの</li>
+              <li>ボトムアップテスト</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>問１２</h3>
+          <p>テストの種類</p>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-12.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>運用テスト：システム開発において、開発者によるテストが終了した段階でシステムの運用者によって行われるテストのことである。 実際の稼動状況において問題なく動作するかどうかを検証するためのものである。</li>
+              <li>結合テスト</li>
+              <li>システムテスト：システム結合テスト、システム適格性確認テストなどのこと</li>
+              <li>〇、回帰テスト：変更した機能と従来からの機能を含めてテストすることで、他の正常な部分からの影響を与えないか検証する方法。</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>問１３</h3>
+          <p>運用テストの検査内容</p>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-13.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>単体テスト</li>
+              <li>単体テスト</li>
+              <li>結合テスト</li>
+              <li>〇</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>問１４</h3>
+          <p>アプリケーションの保守</p>
+        </section>
+        <section>
+          <section>
+            <h4>システムの保守</h4>
+          </section>
+          <section>
+            <p>保守では、不具合や改善による更新を継続して行う。修正や更新が生じた場合は、担当者が判断をせず、サービスマネジメントプロセスに基づいて、検査、承認を受け、業務に支障を来さないようルールに基づいて登録を行う。</p>
+            <p>求められた保守作業については、速やかに実施されるように管理を行い、記録を残す。</p>
+            <p>テスト終了後は、本稼働に移し、安定して稼働していることを確認するまで、引き続き不具合の発生を監視する。</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-14.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>×</li>
+              <li>〇</li>
+              <li>×</li>
+              <li>×</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>問１５</h3>
+          <p>XP(Extreme Programming)</p>
+        </section>
+        <section>
+          <section>
+            <h4>ソフトウェアの開発モデル</h4>
+            <ul>
+              <li>ウォータファール</li>
+              <li>プロトタイピング</li>
+              <li>スパイラル</li>
+              <li>アジャイル</li>
+            </ul>
+          </section>
+          <section>
+            <p>XPとはケントベック氏が考案したアジャイル開発の一つ。利用者側と開発者側が共有すべき価値が示され、実践すべきプラクティスに基づいて作業を進めていく。ペアプログラミング、リファクタリングなど。</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-15.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>×</li>
+              <li>×</li>
+              <li>〇</li>
+              <li>×</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>問１６</h3>
+          <p>ソフトウェア開発に手法</p>
+        </section>
+        <section>
+          <section>
+            <h4>リエンジニアリング</h4>
+            <p>すでに完成し稼働しているシステムや首都うぃ利用して、新しいシステムやソフトを作成する方法</p>
+          </section>
+          <section>
+            <img src="img/4/4-16-1.jpg" height="600px">
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-16.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>×</li>
+              <li>×</li>
+              <li>〇</li>
+              <li>×</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>問１７</h3>
+          <p>ライセンス契約</p>
+        </section>
+        <section>
+          <section>
+            <h4>システム開発に伴うさまざまな管理</h4>
+          </section>
+          <section>
+            <h5>知的財産適用管理</h5>
+            <p>自社で開発したソフト：作成者、法人名義で公表されたものは原則その法人。</p>
+            <p>外部へ委託して開発ソフト：契約による。契約で特に定めない限り、委託された側。</p>
+            <p>パッケージソフトの改変：無断の改変は著作権の侵害。カスタマイズやマクロの作成は、必要限度は許容される。</p>
+          </section>
+          <section>
+            <h5>ライセンス管理</h5>
+            <p>自社が管理を持たないソフトを使用する場合のは、ライセンス契約を交わす必要がある。<br>また、共同開発を行った場合やそれぞれに保有している著作権を互いに利用し合う場合にクロスライセンス契約を交わすことで、効率の良い利用ができる。</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-17.jpg">
+          </section>
+          <section>
+            <ul style="list-style-type: katakana;">
+              <li>×</li>
+              <li>〇</li>
+              <li>×</li>
+              <li>×</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>問１８</h3>
+          <p>ソフトウェア開発手法</p>
+        </section>
+        <section>
+          <section>
+            <img src="img/4/4-18.jpg">
+          </section>
+          <section>
+            <p>答え．イ</p>
+            <p>アジャイル開発短期間のサイクルで、要件定義、設計、開発、テスト、評価、修正、リリースを繰り返していく開発手法の1つ。また、リファクタリングは、外部仕様を変えないで、内部構造を手直ししていく方法。</p>
+          </section>
+        </section>
+        <section>
+          <h3>問１９</h3>
+          <p>ライセンス契約</p>
+        </section>
+        <section>
+          <h4>構成管理・変更管理</h4>
+          <p>構成管理：ハードウェアの台数や設置場所、ライセンスやバージョンなどすべての情報資源の管理</p>
+          <p>変更管理：あるところを基準に、品目の完全性を確保したうえで、変更計画を策定し、変更部分を管理</p>
+          <p>リリース管理：構成品目の完全性が保証されたものについて、リリースを行い、バージョン管理と保管管理を行う。</p>
+        </section>
+      <section>
+        <section>
+          <img src="img/4/4-19.jpg">
+        </section>
+        <section>
+          <ul style="list-style-type: katakana;">
+            <li>更新違反による記録の漏れ</li>
+            <li>〇</li>
+            <li>最新状態の不整合</li>
+            <li>更新や古愛に関する情報公開の不備</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>今後の予定</h3>
+        </section>
+        <section>
+          <p>5/9 プジェクトマネジメント</p>
+          <p>5/16 サービスマネジメント</p>
+          <p>5/23 システム戦略</p>
+          <p>5/30 経営戦略</p>
+          <p>6/6 企業と法務</p>
+          <p>6/13 計算問題</p>
+        </section>
+      </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+     // More info https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       transition: 'slide', // none/fade/slide/convex/concave/zoom
+       // More info https://github.com/hakimel/reveal.js#dependencies
+       dependencies: [
+         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'plugin/zoom-js/zoom.js', async: true },
+         { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
+    </script>
+  </body>
+</html>
